@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glava5", "Glava5\Glava5.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glava6", "Glava6\Glava6.csproj", "{E7F11894-04C9-4AC7-B7B8-FBC7419452CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Probnik", "Probnik\Probnik.csproj", "{F53AE2F9-211D-47BF-98FC-BE049A045B13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glava7", "Glava7\Glava7.csproj", "{D73414D5-16D9-44BD-8614-89D9B50806F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -49,6 +53,14 @@ Global
 		{E7F11894-04C9-4AC7-B7B8-FBC7419452CD}.Debug|x86.Build.0 = Debug|x86
 		{E7F11894-04C9-4AC7-B7B8-FBC7419452CD}.Release|x86.ActiveCfg = Release|x86
 		{E7F11894-04C9-4AC7-B7B8-FBC7419452CD}.Release|x86.Build.0 = Release|x86
+		{F53AE2F9-211D-47BF-98FC-BE049A045B13}.Debug|x86.ActiveCfg = Debug|x86
+		{F53AE2F9-211D-47BF-98FC-BE049A045B13}.Debug|x86.Build.0 = Debug|x86
+		{F53AE2F9-211D-47BF-98FC-BE049A045B13}.Release|x86.ActiveCfg = Release|x86
+		{F53AE2F9-211D-47BF-98FC-BE049A045B13}.Release|x86.Build.0 = Release|x86
+		{D73414D5-16D9-44BD-8614-89D9B50806F0}.Debug|x86.ActiveCfg = Debug|x86
+		{D73414D5-16D9-44BD-8614-89D9B50806F0}.Debug|x86.Build.0 = Debug|x86
+		{D73414D5-16D9-44BD-8614-89D9B50806F0}.Release|x86.ActiveCfg = Release|x86
+		{D73414D5-16D9-44BD-8614-89D9B50806F0}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
