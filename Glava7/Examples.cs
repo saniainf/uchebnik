@@ -6,7 +6,7 @@ class Example
     {
         string numb;
         Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.Write("1. Простые массивы\n2. Ступенчатые массивы\n3. Break Continue\n\n");
+        Console.Write("1. Простые массивы\n2. Ступенчатые массивы\n3. Неявно типизированные массивы\n\n");
         Console.ForegroundColor = ConsoleColor.Green;
         Console.Write("Введи номер части: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -77,11 +77,21 @@ class Example
 
     static void Chap2()
     {
+        /* ступенчатый массив или массив массивов
+         * */
+        int[][] steps = new int[3][];
+        steps[0] = new int[4];
+        steps[1] = new int[3];
+        steps[2] = new int[5];
 
+        int[][,] steps2x = new int[3][,];
     }
 
     static void Chap3()
     {
-
+        string stroka = "asdfghjkl";
+        var arrrstr = stroka.ToCharArray();
+        for (int a = 0; a < arrrstr.Length; a++)
+            Console.WriteLine("{0}", arrrstr[a]);
     }
 }
