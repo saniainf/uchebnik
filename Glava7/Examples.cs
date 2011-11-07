@@ -18,5 +18,7 @@ class Example
             avg += massive2[a];
         avg /= 10;
         Console.WriteLine("среднее:{0}", avg);
+
+        /**/
     }
 }
