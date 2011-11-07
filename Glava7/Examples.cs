@@ -118,7 +118,19 @@ class Example
 
     static void Chap5()
     {
-        string stroka = "qwertyuiopasdfghjklzxcvbnm";
+        Console.Write("Введите массив для сортировки: ");
+        string stroka = Console.ReadLine();
+        if (stroka == "")
+        {
+            stroka = "qwertyuiop147asdfghjkl258zxcvbnm369";
+            Console.WriteLine("массив данный по умолчанию: {0}", stroka);
+        }
+
+        Console.WriteLine();
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine ("исходный массив данных: {0}", stroka);
+        Console.ResetColor();
+
         char[] sortmassiv = stroka.ToCharArray();
         bool cheak = true;
 
@@ -136,8 +148,14 @@ class Example
                 }
             }
         }
+
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.Write("отсортированный массив: ");
         foreach (char a in sortmassiv) // в переменную 'a' сохраняется текущее значение ячейки
             Console.Write("{0}", a);
-        /**/
+
+        Console.ResetColor();
+        Console.WriteLine();
+        Console.WriteLine();
     }
 }
