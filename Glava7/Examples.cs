@@ -6,7 +6,7 @@ class Example
     {
         string numb;
         Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.Write("1. Простые массивы\n2. Ступенчатые массивы\n3. Неявно типизированные массивы\n\n");
+        Console.Write("1. Простые массивы\n2. Ступенчатые массивы\n3. Неявно типизированные массивы\n4. foreach\n5. Сортировка\n\n");
         Console.ForegroundColor = ConsoleColor.Green;
         Console.Write("Введи номер части: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -27,6 +27,14 @@ class Example
             case "3":
                 Console.Clear();
                 Chap3();
+                break;
+            case "4":
+                Console.Clear();
+                Chap4();
+                break;
+            case "5":
+                Console.Clear();
+                Chap5();
                 break;
             default:
                 Console.WriteLine("не вводи всякую херню\n\n\n");
@@ -73,6 +81,9 @@ class Example
             for (int b = 0; b < 5; b++)
                 for (int c = 0; c < 3; c++)
                     Console.WriteLine("масив[{0},{1},{2}]: {3}", a, b, c, massive4[a, b, c]);
+
+        foreach (int a in massive4) // в переменную 'a' сохраняется текущее значение ячейки
+            Console.Write("{0} ", a);
     }
 
     static void Chap2()
@@ -89,9 +100,43 @@ class Example
 
     static void Chap3()
     {
+        /*инициализируется сразу*/
         string stroka = "asdfghjkl";
         var arrrstr = stroka.ToCharArray();
         for (int a = 0; a < arrrstr.Length; a++)
             Console.WriteLine("{0}", arrrstr[a]);
+    }
+
+    static void Chap4()
+    {
+        string stroka = "abcdefghijklmnopqrstuvwxyz";
+        char[] arrstr = stroka.ToCharArray();
+        
+        foreach (char a in arrstr) // в переменную 'a' сохраняется текущее значение ячейки
+            Console.WriteLine("{0}", (int)a);
+    }
+
+    static void Chap5()
+    {
+        string stroka = "qwertyuiopasdfghjklzxcvbnm";
+        char[] sortmassiv = stroka.ToCharArray();
+        bool cheak = true;
+
+        while (cheak)
+        {
+            cheak = false;
+            for (int a = 0; a < sortmassiv.Length-1; a++)
+            {
+                if (sortmassiv[a] > sortmassiv[a+1])
+                {
+                    char x = sortmassiv[a];
+                    sortmassiv[a] = sortmassiv[a + 1];
+                    sortmassiv[a + 1] = x;
+                    cheak = true;
+                }
+            }
+        }
+        foreach (char a in sortmassiv) // в переменную 'a' сохраняется текущее значение ячейки
+            Console.Write("{0}", a);
     }
 }
