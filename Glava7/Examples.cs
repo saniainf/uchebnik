@@ -138,5 +138,6 @@ class Example
         }
         foreach (char a in sortmassiv) // в переменную 'a' сохраняется текущее значение ячейки
             Console.Write("{0}", a);
+        /**/
     }
 }
