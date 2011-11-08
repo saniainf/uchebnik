@@ -6,7 +6,7 @@ class Example
     {
         string numb;
         Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.Write("1. Простые массивы\n2. Ступенчатые массивы\n3. Неявно типизированные массивы\n4. foreach\n5. Сортировка\n\n");
+        Console.Write("1. Простые массивы\n2. Ступенчатые массивы\n3. Неявно типизированные массивы\n4. foreach\n5. bubble sort\n6. quicksort\n\n");
         Console.ForegroundColor = ConsoleColor.Green;
         Console.Write("Введи номер части: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -35,6 +35,10 @@ class Example
             case "5":
                 Console.Clear();
                 Chap5();
+                break;
+            case "6":
+                Console.Clear();
+                Chap6();
                 break;
             default:
                 Console.WriteLine("не вводи всякую херню\n\n\n");
@@ -118,7 +122,19 @@ class Example
 
     static void Chap5()
     {
-        string stroka = "qwertyuiopasdfghjklzxcvbnm";
+        Console.Write("Введите массив для сортировки: ");
+        string stroka = Console.ReadLine();
+        if (stroka == "")
+        {
+            stroka = "qwertyuiop147asdfghjkl258zxcvbnm369";
+            Console.WriteLine("массив данный по умолчанию: {0}", stroka);
+        }
+
+        Console.WriteLine();
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine ("исходный массив данных: {0}", stroka);
+        Console.ResetColor();
+
         char[] sortmassiv = stroka.ToCharArray();
         bool cheak = true;
 
@@ -136,7 +152,56 @@ class Example
                 }
             }
         }
+
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.Write("отсортированный массив: ");
         foreach (char a in sortmassiv) // в переменную 'a' сохраняется текущее значение ячейки
             Console.Write("{0}", a);
+
+        Console.ResetColor();
+        Console.WriteLine();
+        Console.WriteLine();
+    }
+
+    static void Chap6()
+    {
+        Console.Write("Введите массив для сортировки: ");
+        string stroka = Console.ReadLine();
+        if (stroka == "")
+        {
+            stroka = "qwertyuiop147asdfghjkl258zxcvbnm369";
+            Console.WriteLine("массив данный по умолчанию: {0}", stroka);
+        }
+        Console.WriteLine();
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine("исходный массив данных: {0}", stroka);
+        Console.ResetColor();
+
+        char[] sortmassiv = stroka.ToCharArray();
+        bool cheak = true;
+
+        while (cheak)
+        {
+            cheak = false;
+            for (int a = 0; a < sortmassiv.Length - 1; a++)
+            {
+                if (sortmassiv[a] > sortmassiv[a + 1])
+                {
+                    char x = sortmassiv[a];
+                    sortmassiv[a] = sortmassiv[a + 1];
+                    sortmassiv[a + 1] = x;
+                    cheak = true;
+                }
+            }
+        }
+
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.Write("отсортированный массив: ");
+        foreach (char a in sortmassiv) // в переменную 'a' сохраняется текущее значение ячейки
+            Console.Write("{0}", a);
+
+        Console.ResetColor();
+        Console.WriteLine();
+        Console.WriteLine();
     }
 }
