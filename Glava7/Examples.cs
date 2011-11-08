@@ -129,7 +129,6 @@ class Example
             stroka = "qwertyuiop147asdfghjkl258zxcvbnm369";
             Console.WriteLine("массив данный по умолчанию: {0}", stroka);
         }
-
         Console.WriteLine();
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine ("исходный массив данных: {0}", stroka);
@@ -138,17 +137,17 @@ class Example
         char[] sortmassiv = stroka.ToCharArray();
         bool cheak = true;
 
-        while (cheak)
+        while (cheak) //цикл пока истина
         {
-            cheak = false;
-            for (int a = 0; a < sortmassiv.Length-1; a++)
+            cheak = false; //если небудет ниодного изменения массива то конец цикла
+            for (int a = 0; a < sortmassiv.Length-1; a++) //перебор каждой ячейки
             {
-                if (sortmassiv[a] > sortmassiv[a+1])
+                if (sortmassiv[a] > sortmassiv[a+1]) //сверка ячейки и ячейки+1
                 {
-                    char x = sortmassiv[a];
+                    char x = sortmassiv[a]; // если больше то меняем местами
                     sortmassiv[a] = sortmassiv[a + 1];
                     sortmassiv[a + 1] = x;
-                    cheak = true;
+                    cheak = true; // изменение было
                 }
             }
         }
@@ -157,7 +156,6 @@ class Example
         Console.Write("отсортированный массив: ");
         foreach (char a in sortmassiv) // в переменную 'a' сохраняется текущее значение ячейки
             Console.Write("{0}", a);
-
         Console.ResetColor();
         Console.WriteLine();
         Console.WriteLine();
@@ -165,6 +163,11 @@ class Example
 
     static void Chap6()
     {
+        //qSort(sortmassiv[], 0, sortmassiv.Length);
+        int[] mass3 = { 1, 2, 5, 4, 7, 9, 3, 5, 4, 6, 8, 2, 1, 8, 6, 5, 2, 1, 7, 8, 2, 3, 4, 7, 6, 3, 9, 8 };
+        qSort(mass3, 0, mass3.Length-1);
+
+        /*
         Console.Write("Введите массив для сортировки: ");
         string stroka = Console.ReadLine();
         if (stroka == "")
@@ -180,28 +183,47 @@ class Example
         char[] sortmassiv = stroka.ToCharArray();
         bool cheak = true;
 
-        while (cheak)
-        {
-            cheak = false;
-            for (int a = 0; a < sortmassiv.Length - 1; a++)
-            {
-                if (sortmassiv[a] > sortmassiv[a + 1])
-                {
-                    char x = sortmassiv[a];
-                    sortmassiv[a] = sortmassiv[a + 1];
-                    sortmassiv[a + 1] = x;
-                    cheak = true;
-                }
-            }
-        }
 
         Console.ForegroundColor = ConsoleColor.Green;
         Console.Write("отсортированный массив: ");
         foreach (char a in sortmassiv) // в переменную 'a' сохраняется текущее значение ячейки
             Console.Write("{0}", a);
-
         Console.ResetColor();
         Console.WriteLine();
+        Console.WriteLine();
+         * */
+    }
+
+    public static void qSort(int[] mass33, int low, int high)
+    {
+        int i = low;
+        int j = high;
+        int x = mass33[(low + (high - low) / 2)];
+        do
+        {
+            while (mass33[i] < x)
+                ++i;
+            while (x < mass33[j])
+                --j;
+            if (i <= j)
+            {
+                if (i < j)
+                {
+                    int t = mass33[i];
+                    mass33[i] = mass33[j];
+                    mass33[j] = t;
+                }
+                ++i;
+                --j;
+            }
+        } while (i <= j);
+        if (low < j)
+            qSort(mass33, low, j);
+        if (i < high)
+            qSort(mass33, i, high);
+
+        foreach (int ch in mass33) // в переменную 'a' сохраняется текущее значение ячейки
+            Console.Write("{0}", ch);
         Console.WriteLine();
     }
 }
