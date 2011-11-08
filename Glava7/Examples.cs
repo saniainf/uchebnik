@@ -6,7 +6,14 @@ class Example
     {
         string numb;
         Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.Write("1. Простые массивы\n2. Ступенчатые массивы\n3. Неявно типизированные массивы\n4. foreach\n5. bubble sort\n6. quicksort\n\n");
+        Console.Write("1. Простые массивы\n"+
+                        "2. Ступенчатые массивы\n"+
+                        "3. Неявно типизированные массивы\n"+
+                        "4. foreach\n"+
+                        "5. bubble sort\n"+
+                        "6. quicksort\n"+
+                        "7. String\n"+
+                        "8. Число в слова\n\n");
         Console.ForegroundColor = ConsoleColor.Green;
         Console.Write("Введи номер части: ");
         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -39,6 +46,14 @@ class Example
             case "6":
                 Console.Clear();
                 Chap6();
+                break;
+            case "7":
+                Console.Clear();
+                Chap7();
+                break;
+            case "8":
+                Console.Clear();
+                Chap8();
                 break;
             default:
                 Console.WriteLine("не вводи всякую херню\n\n\n");
@@ -136,6 +151,7 @@ class Example
 
         char[] sortmassiv = stroka.ToCharArray();
         bool cheak = true;
+        int count = 0;
 
         while (cheak) //цикл пока истина
         {
@@ -150,6 +166,7 @@ class Example
                     cheak = true; // изменение было
                 }
             }
+            count++;
         }
 
         Console.ForegroundColor = ConsoleColor.Green;
@@ -158,6 +175,7 @@ class Example
             Console.Write("{0}", a);
         Console.ResetColor();
         Console.WriteLine();
+        Console.WriteLine("count: {0}", count);
         Console.WriteLine();
     }
 
@@ -168,7 +186,7 @@ class Example
         qSort(mass3, 0, mass3.Length-1);
     }
 
-    public static void qSort(int[] mass33, int low, int high)
+    static void qSort(int[] mass33, int low, int high)
     {
         int i = low;
         int j = high;
@@ -198,6 +216,60 @@ class Example
 
         foreach (int ch in mass33) // в переменную 'a' сохраняется текущее значение ячейки
             Console.Write("{0}", ch);
+        Console.WriteLine();
+    }
+
+    static void Chap7()
+    {
+        string stroka = "qwertyuiopQWERTYUIOPqwertyuiop";
+        char[] chr = stroka.ToCharArray();
+        string stroka2 = new string(chr);
+
+        string Stroka = "ASDFGHJKLasdfghjklASDFGHJKL";
+
+        Console.WriteLine("stroka: " + stroka);
+        Console.WriteLine("stroka2: " + stroka2);
+        Console.WriteLine("Stroka: " + Stroka);
+
+        Console.WriteLine("{0}", string.Compare(stroka, Stroka, StringComparison.CurrentCulture)); //сверяет 2 строки, возв int
+        Console.WriteLine("{0}", string.Equals(stroka, Stroka, StringComparison.CurrentCultureIgnoreCase)); //сверяет 2 строки, возв bool
+        Console.WriteLine(stroka == stroka2); //сверяет 2 строки поразрядно, возв bool
+
+        Console.WriteLine("{0}", stroka.ToUpper()); //все символы в верхний регистр
+        Console.WriteLine("{0}", Stroka.ToLower()); //все символы в нижний регистр
+
+        Console.WriteLine("{0}", stroka.IndexOf('t')); //поиск символа в строке, возврат индекса ПЕРВОГО совпадения
+        Console.WriteLine("{0}", stroka.IndexOf("io", StringComparison.OrdinalIgnoreCase)); //поиск подстроки в строке, возврат индекса ПЕРВОГО совпадения
+        Console.WriteLine("{0}", stroka.LastIndexOf('t')); //поиск символа в строке, возврат индекса ПОСЛЕДНЕГО совпадения
+        Console.WriteLine("{0}", stroka.LastIndexOf("io", StringComparison.OrdinalIgnoreCase)); //поиск подстроки в строке, возврат индекса ПОСЛЕДНЕГО совпадения
+
+        Console.WriteLine(stroka[7]); //выбор отдельного символа, read only
+    }
+
+    static void Chap8()
+    {
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.Write("число цифрами(max 9 символов): ");
+        int number = Convert.ToInt32(Console.ReadLine());
+        string[] digits = { "ноль", "один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять" };
+
+        int next = 0;
+        int count = 0;
+        int[] n = new int[15];
+
+        Console.ForegroundColor = ConsoleColor.Green;
+        do
+        {
+            next = number % 10;
+            n[count] = next;
+            count++;
+            number = number / 10;
+        } while (number > 0);
+
+        for (count--; count >= 0; count--)
+            Console.Write(digits[n[count]] + " ");
+
+        Console.WriteLine();
         Console.WriteLine();
     }
 }
