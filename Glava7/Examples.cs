@@ -166,32 +166,6 @@ class Example
         //qSort(sortmassiv[], 0, sortmassiv.Length);
         int[] mass3 = { 1, 2, 5, 4, 7, 9, 3, 5, 4, 6, 8, 2, 1, 8, 6, 5, 2, 1, 7, 8, 2, 3, 4, 7, 6, 3, 9, 8 };
         qSort(mass3, 0, mass3.Length-1);
-
-        /*
-        Console.Write("Введите массив для сортировки: ");
-        string stroka = Console.ReadLine();
-        if (stroka == "")
-        {
-            stroka = "qwertyuiop147asdfghjkl258zxcvbnm369";
-            Console.WriteLine("массив данный по умолчанию: {0}", stroka);
-        }
-        Console.WriteLine();
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine("исходный массив данных: {0}", stroka);
-        Console.ResetColor();
-
-        char[] sortmassiv = stroka.ToCharArray();
-        bool cheak = true;
-
-
-        Console.ForegroundColor = ConsoleColor.Green;
-        Console.Write("отсортированный массив: ");
-        foreach (char a in sortmassiv) // в переменную 'a' сохраняется текущее значение ячейки
-            Console.Write("{0}", a);
-        Console.ResetColor();
-        Console.WriteLine();
-        Console.WriteLine();
-         * */
     }
 
     public static void qSort(int[] mass33, int low, int high)
