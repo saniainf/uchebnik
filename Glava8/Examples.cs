@@ -122,6 +122,7 @@ class StackDrv
     private void Menu()
     {
         string numb;
+
         Console.Clear();
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("Меню стека\n");
@@ -140,6 +141,7 @@ class StackDrv
         numb = Console.ReadLine();
         Console.ResetColor();
         Console.Write("\n\n");
+
 
         switch (numb)
         {
@@ -172,7 +174,7 @@ class StackDrv
             //    break;
             case "8":
                 Console.Clear();
-                return;
+                Environment.Exit(0);
                 break;
             default:
                 Console.Clear();
@@ -181,11 +183,17 @@ class StackDrv
                 Console.Clear();
                 Menu();
                 break;
-        }
+            }
     }
 
     private void PushStack()
     {
+        if (stack.isFull())
+        {
+            Console.WriteLine("\nСтек заполнен");
+            Console.ReadLine();
+            Menu();
+        }
         string inputStr;
         Console.Write("Ввод: ");
         inputStr = Console.ReadLine();
@@ -193,7 +201,7 @@ class StackDrv
         {
             if (stack.isFull())
             {
-                Console.WriteLine("Превышен размер стека");
+                Console.WriteLine("\nПревышен размер стека. Сохранено {0} первых.", a);
                 Console.ReadLine();
                 Menu();
             }
@@ -204,13 +212,31 @@ class StackDrv
 
     private void PullStack()
     {
+        if (stack.isEmpty())
+        {
+            Console.WriteLine("\nСтек пустой");
+            Console.ReadLine();
+            Menu();
+        }
+        int countTable = 0;
         int pullIndx;
         Console.Write("Кол-во ячеек для вывода: ");
         pullIndx = Convert.ToInt32(Console.ReadLine());
         Console.Write("\n");
         for (; pullIndx > 0; pullIndx--)
         {
-            Console.Write(" " + stack.Pull());
+            if (stack.isEmpty())
+            {
+                Console.WriteLine("\n\nДостигнут конец стека. Стек пуст.");
+                Console.ReadLine();
+                Menu();
+            }
+            Console.Write("{0}\t", stack.Pull());
+            if (++countTable == 5)
+            {
+                Console.WriteLine("\n");
+                countTable = 0;
+            }
         }
         Console.ReadLine();
         Menu();
@@ -236,7 +262,7 @@ class classStack
     {
         if (indx == stck.Length)
         {
-            Console.WriteLine("Стек заполнен");
+            Console.WriteLine("\nОшибка !!! Стек заполнен\n");
             return;
         }
         stck[indx] = chr;
@@ -248,7 +274,7 @@ class classStack
     {
         if (indx == 0)
         {
-            Console.WriteLine("Стек пуст");
+            Console.WriteLine("\nОшибка !!! Стек пуст\n");
             return (char)0;
         }
         indx--;
