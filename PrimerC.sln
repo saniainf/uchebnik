@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Probnik", "Probnik\Probnik.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glava7", "Glava7\Glava7.csproj", "{D73414D5-16D9-44BD-8614-89D9B50806F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glava8", "Glava8\Glava8.csproj", "{3B2BFB0C-7EC4-4160-B4CF-354D6EA9B001}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -61,6 +63,10 @@ Global
 		{D73414D5-16D9-44BD-8614-89D9B50806F0}.Debug|x86.Build.0 = Debug|x86
 		{D73414D5-16D9-44BD-8614-89D9B50806F0}.Release|x86.ActiveCfg = Release|x86
 		{D73414D5-16D9-44BD-8614-89D9B50806F0}.Release|x86.Build.0 = Release|x86
+		{3B2BFB0C-7EC4-4160-B4CF-354D6EA9B001}.Debug|x86.ActiveCfg = Debug|x86
+		{3B2BFB0C-7EC4-4160-B4CF-354D6EA9B001}.Debug|x86.Build.0 = Debug|x86
+		{3B2BFB0C-7EC4-4160-B4CF-354D6EA9B001}.Release|x86.ActiveCfg = Release|x86
+		{3B2BFB0C-7EC4-4160-B4CF-354D6EA9B001}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
