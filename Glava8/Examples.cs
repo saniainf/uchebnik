@@ -124,16 +124,13 @@ class StackDrv
         string numb;
 
         Console.Clear();
+        stackInfo();
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("Меню стека\n");
         Console.Write("1. Поместить в стек\n" +
                         "2. Извлечь из стека\n" +
-                        "3. Проверка заполнености\n" +
-                        "4. Проверка пустоты\n" +
-                        "5. Общая емкость стека\n" +
-                        "6. Текущий индекс\n" +
-                        "7. Вывести весь стек\n" +
-                        "8. Выход\n" +
+                        "3. Извлечь весь стек\n" +
+                        "4. Выход\n" +
                         "\n");
         Console.ForegroundColor = ConsoleColor.Green;
         Console.Write("ввод: ");
@@ -153,26 +150,11 @@ class StackDrv
                 Console.Clear();
                 PullStack();
                 break;
-            //case "3":
-            //    Console.Clear();
-            //    Chap3();
-            //    break;
-            //case "4":
-            //    Console.Clear();
-            //    Chap4();
-            //    break;
-            //case "5":
-            //    Console.Clear();
-            //    Chap5();
-            //    break;
-            //case "6":
-            //    Console.Clear();
-            //    Chap6();
-            //    break;
-            //case "7":
-            //    Console.Clear();
-            //    break;
-            case "8":
+            case "3":
+                Console.Clear();
+                PullAllStack();
+                break;
+            case "4":
                 Console.Clear();
                 Environment.Exit(0);
                 break;
@@ -184,6 +166,18 @@ class StackDrv
                 Menu();
                 break;
             }
+    }
+
+    private void stackInfo()
+    {
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.Write("Размер стека: ");
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.Write(stack.Capacity() + "    ");
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.Write("Текущий индекс: ");
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.Write(stack.GetIndex() + "\n\n\n\n\n");
     }
 
     private void PushStack()
@@ -240,6 +234,29 @@ class StackDrv
         }
         Console.ReadLine();
         Menu();
+    }
+
+    private void PullAllStack()
+    {
+        if (stack.isEmpty())
+        {
+            Console.WriteLine("\nСтек пустой");
+            Console.ReadLine();
+            Menu();
+        }
+        int countTable = 0;
+        for (int a = stack.GetIndex(); a > 0; a--)
+        {
+            Console.Write("{0}\t", stack.Pull());
+            if (++countTable == 5)
+            {
+                Console.WriteLine("\n");
+                countTable = 0;
+            }
+        }
+        Console.ReadLine();
+        Menu();
+
     }
 
 }
