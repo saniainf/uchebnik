@@ -108,6 +108,8 @@ class AccessZero
     }
 }
 
+#region Stack
+
 class StackDrv
 {
     classStack stack;
@@ -322,3 +324,5 @@ class classStack
         return indx;
     }
 }
+
+#endregion
