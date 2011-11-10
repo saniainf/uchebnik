@@ -124,50 +124,53 @@ class StackDrv
     private void Menu()
     {
         string numb;
+        bool timework = true;
 
-        Console.Clear();
-        stackInfo();
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine("Меню стека\n");
-        Console.Write("1. Поместить в стек\n" +
-                        "2. Извлечь из стека\n" +
-                        "3. Извлечь весь стек\n" +
-                        "4. Выход\n" +
-                        "\n");
-        Console.ForegroundColor = ConsoleColor.Green;
-        Console.Write("ввод: ");
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        numb = Console.ReadLine();
-        Console.ResetColor();
-        Console.Write("\n\n");
-
-
-        switch (numb)
+        do
         {
-            case "1":
-                Console.Clear();
-                PushStack();
-                break;
-            case "2":
-                Console.Clear();
-                PullStack();
-                break;
-            case "3":
-                Console.Clear();
-                PullAllStack();
-                break;
-            case "4":
-                Console.Clear();
-                Environment.Exit(0);
-                break;
-            default:
-                Console.Clear();
-                Console.WriteLine("error\n\terror\n\t\terror\n\t\t\terror\n\t\t\t\terror\n\n\nне вводи всякую херню\n\n\nжмакни Enter");
-                Console.ReadLine();
-                Console.Clear();
-                Menu();
-                break;
+            Console.Clear();
+            stackInfo();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Меню стека\n");
+            Console.Write("1. Поместить в стек\n" +
+                            "2. Извлечь из стека\n" +
+                            "3. Извлечь весь стек\n" +
+                            "4. Выход\n" +
+                            "\n");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("ввод: ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            numb = Console.ReadLine();
+            Console.ResetColor();
+            Console.Write("\n\n");
+
+
+            switch (numb)
+            {
+                case "1":
+                    Console.Clear();
+                    PushStack();
+                    break;
+                case "2":
+                    Console.Clear();
+                    PullStack();
+                    break;
+                case "3":
+                    Console.Clear();
+                    PullAllStack();
+                    break;
+                case "4":
+                    Console.Clear();
+                    timework = false;
+                    break;
+                default:
+                    Console.Clear();
+                    Console.WriteLine("error\n\terror\n\t\terror\n\t\t\terror\n\t\t\t\terror\n\n\nне вводи всякую херню\n\n\nжмакни Enter");
+                    Console.ReadLine();
+                    Console.Clear();
+                    break;
             }
+        } while (timework);
     }
 
     private void stackInfo()
@@ -188,7 +191,7 @@ class StackDrv
         {
             Console.WriteLine("\nСтек заполнен");
             Console.ReadLine();
-            Menu();
+            return;
         }
         string inputStr;
         Console.Write("Ввод: ");
@@ -199,11 +202,10 @@ class StackDrv
             {
                 Console.WriteLine("\nПревышен размер стека. Сохранено {0} первых.", a);
                 Console.ReadLine();
-                Menu();
+                return;
             }
             stack.Push(inputStr[a]);
         }
-        Menu();
     }
 
     private void PullStack()
@@ -212,7 +214,7 @@ class StackDrv
         {
             Console.WriteLine("\nСтек пустой");
             Console.ReadLine();
-            Menu();
+            return;
         }
         int countTable = 0;
         int pullIndx;
@@ -225,7 +227,7 @@ class StackDrv
             {
                 Console.WriteLine("\n\nДостигнут конец стека. Стек пуст.");
                 Console.ReadLine();
-                Menu();
+                return;
             }
             Console.Write("{0}\t", stack.Pull());
             if (++countTable == 5)
@@ -235,7 +237,6 @@ class StackDrv
             }
         }
         Console.ReadLine();
-        Menu();
     }
 
     private void PullAllStack()
@@ -244,7 +245,7 @@ class StackDrv
         {
             Console.WriteLine("\nСтек пустой");
             Console.ReadLine();
-            Menu();
+            return;
         }
         int countTable = 0;
         for (int a = stack.GetIndex(); a > 0; a--)
@@ -257,8 +258,6 @@ class StackDrv
             }
         }
         Console.ReadLine();
-        Menu();
-
     }
 
 }
