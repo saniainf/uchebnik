@@ -2,34 +2,22 @@
 
 class Example
 {
-    static void Main()
+    public static void Main()
     {
-        int count;
-        Destruct ob = new Destruct(0);
+        ConsoleKeyInfo cki;
+        // Prevent example from ending if CTL+C is pressed.
+        Console.TreatControlCAsInput = true;
 
-        for (count = 1; count < 100000; count++)
-            ob.Generator(count);
-
-        Console.WriteLine("готово");
-    }
-}
-
-class Destruct
-{
-    public int x;
-
-    public Destruct(int i)
-    {
-        x = i;
-    }
-
-    ~Destruct()
-    {
-        Console.WriteLine("Destroy " + x);
-    }
-
-    public void Generator(int i)
-    {
-        Destruct o = new Destruct(i);
+        Console.WriteLine("Press any combination of CTL, ALT, and SHIFT, and a console key.");
+        Console.WriteLine("Press the Escape (Esc) key to quit: \n");
+        do
+        {
+            cki = Console.ReadKey();
+            Console.Write(" --- You pressed ");
+            if ((cki.Modifiers & ConsoleModifiers.Alt) != 0) Console.Write("ALT+");
+            if ((cki.Modifiers & ConsoleModifiers.Shift) != 0) Console.Write("SHIFT+");
+            if ((cki.Modifiers & ConsoleModifiers.Control) != 0) Console.Write("CTL+");
+            Console.WriteLine(cki.Key.ToString());
+        } while (cki.Key != ConsoleKey.Escape);
     }
 }
