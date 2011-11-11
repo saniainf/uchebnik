@@ -135,7 +135,8 @@ class StackDrv
             Console.Write("1. Поместить в стек\n" +
                             "2. Извлечь из стека\n" +
                             "3. Извлечь весь стек\n" +
-                            "4. Выход\n" +
+                            "4. Вывести весь стек\n" +
+                            "5. Выход\n" +
                             "\n");
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write("ввод: ");
@@ -160,6 +161,10 @@ class StackDrv
                     PullAllStack();
                     break;
                 case "4":
+                    Console.Clear();
+                    PrintAllStack();
+                    break;
+                case "5":
                     Console.Clear();
                     timework = false;
                     break;
@@ -260,6 +265,28 @@ class StackDrv
         Console.ReadLine();
     }
 
+    private void PrintAllStack()
+    {
+        if (stack.isEmpty())
+        {
+            Console.WriteLine("\nСтек пустой");
+            Console.ReadLine();
+            return;
+        }
+        int countTable = 0;
+        for (int a = stack.GetIndex() - 1; a >= 0; a--)
+        {
+            Console.Write("{0}\t", stack.Print(a));
+            if (++countTable == 5)
+            {
+                Console.WriteLine("\n");
+                countTable = 0;
+            }
+        }
+        Console.ReadLine();
+
+    }
+
 }
 
 class classStack
@@ -297,6 +324,17 @@ class classStack
         }
         indx--;
         return stck[indx];
+    }
+
+    /*вывести произвольную ячейку*/
+    public char Print(int a)
+    {
+        if (indx == 0)
+        {
+            Console.WriteLine("\nОшибка !!! Стек пуст\n");
+            return (char)0;
+        }
+        return stck[a];
     }
 
     /*true если полный*/
