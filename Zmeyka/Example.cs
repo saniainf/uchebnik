@@ -2,20 +2,31 @@
 
 class Example
 {
-    static char[,] arrr = new char[20, 30];
-    static bool draw = false;
+    static char[,] arrr = new char[20, 40]; // {str, stlb}
+    static int[,] snake = {
+                              {9,7}, // [0, 0][0, 1]
+                              {8,7},
+                              {7,7},
+                              {6,7},
+                              {4,7}, // [4, 0][4, 1]
+                              {3,7},
+                              {2,7},
+                              {1,7},
+                          };
+    static bool draw = true;
     static ConsoleKeyInfo keys;
-    static int x = 0;
-    static int y = 0;
 
     static void Main()
     {
-        for (; ; )
+        Console.Title = "Super Duper Snake";
+        Console.CursorVisible = false;
+
+        do
         {
             InputKey();
             UpDate();
             if (draw) Draw();
-        }
+        } while (keys.Key != ConsoleKey.Escape);
     }
 
     static void InputKey()
@@ -23,22 +34,22 @@ class Example
         keys = Console.ReadKey();
         if (keys.Key == ConsoleKey.UpArrow)
         {
-            y--;
+            --snake[0, 0];
             draw = true;
         }
         if (keys.Key == ConsoleKey.DownArrow)
         {
-            y++;
+            ++snake[0, 0];
             draw = true;
         }
         if (keys.Key == ConsoleKey.LeftArrow)
         {
-            x--;
+            --snake[0, 1];
             draw = true;
         }
         if (keys.Key == ConsoleKey.RightArrow)
         {
-            x++;
+            ++snake[0, 1];
             draw = true;
         }
     }
@@ -49,16 +60,19 @@ class Example
         {
             for (int b = 0; b < arrr.GetLength(1); b++)
             {
-                arrr[a, b] = '.';
+                arrr[a, b] = ' ';
             }
         }
 
-        for (int a = y; a < y + 3; a++)
+        for (int a = 7; a > 0; a--)
         {
-            for (int b = x; b < x + 3; b++)
-            {
-                arrr[a, b] = '8';
-            }
+            snake[a, 0] = snake[a - 1, 0];
+            snake[a, 1] = snake[a - 1, 1]; 
+        }
+
+        for (int a = 0; a <= 7 ; a++)
+        {
+            arrr[snake[a, 0], snake[a, 1]] = '8';
         }
     }
 
