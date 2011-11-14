@@ -25,7 +25,7 @@ class Example
         {
             InputKey();
             UpDate();
-            if (draw) Draw();
+            Draw();
         } while (keys.Key != ConsoleKey.Escape);
     }
 
@@ -56,6 +56,7 @@ class Example
 
     static void UpDate()
     {
+        int aa = 0;
         for (int a = 0; a < arrr.GetLength(0); a++)
         {
             for (int b = 0; b < arrr.GetLength(1); b++)
