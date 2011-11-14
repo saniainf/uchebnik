@@ -8,7 +8,7 @@ class Example
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.Write("1. Базовый пример\n"+
                         "2. Stack\n" +
-                        //"3. Неявно типизированные массивы\n" +
+                        "3. sss\n" +
                         //"4. foreach\n" +
                         //"5. bubble sort\n" +
                         //"6. quicksort\n" +
@@ -32,10 +32,10 @@ class Example
                 Console.Clear();
                 Chap2();
                 break;
-            //case "3":
-            //    Console.Clear();
-            //    Chap3();
-            //    break;
+            case "3":
+                Console.Clear();
+                Chap3();
+                break;
             //case "4":
             //    Console.Clear();
             //    Chap4();
@@ -76,6 +76,11 @@ class Example
     static void Chap2()
     {
         StackDrv startStack = new StackDrv();
+    }
+
+    static void Chap3()
+    {
+        Chapter3 chapter3 = new Chapter3();
     }
 }
 
