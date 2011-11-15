@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glava8", "Glava8\Glava8.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snake", "Snake\Snake.csproj", "{628BAAD4-B2D6-40CC-8790-4E200DF0E670}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fints", "fints\fints.csproj", "{4111A8ED-3C69-4518-8FC6-F916865A62CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -73,6 +75,10 @@ Global
 		{628BAAD4-B2D6-40CC-8790-4E200DF0E670}.Debug|x86.Build.0 = Debug|x86
 		{628BAAD4-B2D6-40CC-8790-4E200DF0E670}.Release|x86.ActiveCfg = Release|x86
 		{628BAAD4-B2D6-40CC-8790-4E200DF0E670}.Release|x86.Build.0 = Release|x86
+		{4111A8ED-3C69-4518-8FC6-F916865A62CB}.Debug|x86.ActiveCfg = Debug|x86
+		{4111A8ED-3C69-4518-8FC6-F916865A62CB}.Debug|x86.Build.0 = Debug|x86
+		{4111A8ED-3C69-4518-8FC6-F916865A62CB}.Release|x86.ActiveCfg = Release|x86
+		{4111A8ED-3C69-4518-8FC6-F916865A62CB}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
