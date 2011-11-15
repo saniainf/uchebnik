@@ -9,7 +9,7 @@ class Example
         Console.Write("1. Базовый пример\n"+
                         "2. Stack\n" +
                         "3. Передача объектов по ссылке\n" +
-                        "4. Передача аргументов методу\n" +
+                        "4. ref out\n" +
                         //"5. bubble sort\n" +
                         //"6. quicksort\n" +
                         //"7. String\n" +
@@ -397,5 +397,28 @@ class OtherClass
     {
         Console.ForegroundColor = color;
         Console.WriteLine("alpha {0}, beta {1}\n", alpha, beta);
+        Console.ResetColor();
+    }
+
+    public void Change(OtherClass ob)
+    {
+        ob.alpha = ob.alpha + ob.beta;
+        ob.beta = -ob.beta;
+        ob.color = ConsoleColor.White;
+    }
+
+    public void Swap(ref int a, ref int b)//принудительный вызов по ссылке
+    {
+        int swap;
+        swap = a;
+        a = b;
+        b = swap;
+    }
+
+    public int GetParts(double n, out double frac)//возврат значения из метода
+    {
+        int a = (int)n;
+        frac = n - a;
+        return a;
     }
 }
