@@ -20,7 +20,7 @@ class Chapter3
         Console.Write("obj3 - ");
         obj3.Draw();
 
-        obj1.Copy(obj2); // в поля obj1 компируются значения obj2
+        obj1.Copy(obj2); // в поля obj1 копируются значения obj2
 
         Console.ForegroundColor = obj1.color;
         Console.Write("odj1 - ");
@@ -56,28 +56,3 @@ class Chapter3
     }
 }
 
-class OtherClass
-{
-    public int alpha, beta;
-    public ConsoleColor color;
-
-    public OtherClass(int a, int b, ConsoleColor color)
-    {
-        alpha = a;
-        beta = b;
-        this.color = color;
-    }
-
-    public void Copy(OtherClass obj)
-    {
-        this.alpha = obj.alpha;
-        this.beta = obj.beta;
-        this.color = obj.color;
-    }
-
-    public void Draw()
-    {
-        Console.ForegroundColor = color;
-        Console.WriteLine("alpha {0}, beta {1}\n", alpha, beta);
-    }
-}

@@ -8,8 +8,8 @@ class Example
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.Write("1. Базовый пример\n"+
                         "2. Stack\n" +
-                        "3. sss\n" +
-                        //"4. foreach\n" +
+                        "3. Передача объектов по ссылке\n" +
+                        "4. Передача аргументов методу\n" +
                         //"5. bubble sort\n" +
                         //"6. quicksort\n" +
                         //"7. String\n" +
@@ -36,10 +36,10 @@ class Example
                 Console.Clear();
                 Chap3();
                 break;
-            //case "4":
-            //    Console.Clear();
-            //    Chap4();
-            //    break;
+            case "4":
+                Console.Clear();
+                Chap4();
+                break;
             //case "5":
             //    Console.Clear();
             //    Chap5();
@@ -81,6 +81,11 @@ class Example
     static void Chap3()
     {
         Chapter3 chapter3 = new Chapter3();
+    }
+    
+    static void Chap4()
+    {
+        Chapter4 chapter4 = new Chapter4();
     }
 }
 
@@ -368,3 +373,29 @@ class classStack
 }
 
 #endregion
+
+class OtherClass
+{
+    public int alpha, beta;
+    public ConsoleColor color;
+
+    public OtherClass(int a, int b, ConsoleColor color)
+    {
+        alpha = a;
+        beta = b;
+        this.color = color;
+    }
+
+    public void Copy(OtherClass obj)
+    {
+        this.alpha = obj.alpha;
+        this.beta = obj.beta;
+        this.color = obj.color;
+    }
+
+    public void Draw()
+    {
+        Console.ForegroundColor = color;
+        Console.WriteLine("alpha {0}, beta {1}\n", alpha, beta);
+    }
+}
