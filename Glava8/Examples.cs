@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 class Example
 {
@@ -9,8 +10,8 @@ class Example
         Console.Write("1. Базовый пример\n"+
                         "2. Stack\n" +
                         "3. Передача объектов по ссылке\n" +
-                        "4. ref out\n" +
-                        //"5. bubble sort\n" +
+                        "4. ref out params\n" +
+                        "5. return object\n" +
                         //"6. quicksort\n" +
                         //"7. String\n" +
                         //"8. Число в слова\n" +
@@ -40,10 +41,10 @@ class Example
                 Console.Clear();
                 Chap4();
                 break;
-            //case "5":
-            //    Console.Clear();
-            //    Chap5();
-            //    break;
+            case "5":
+                Console.Clear();
+                Chap5();
+                break;
             //case "6":
             //    Console.Clear();
             //    Chap6();
@@ -86,6 +87,11 @@ class Example
     static void Chap4()
     {
         Chapter4 chapter4 = new Chapter4();
+    }
+    
+    static void Chap5()
+    {
+        Chapter5 chapter5 = new Chapter5();
     }
 }
 
@@ -420,5 +426,54 @@ class OtherClass
         int a = (int)n;
         frac = n - a;
         return a;
+    }
+
+    public void SwapObj(ref OtherClass obj1, ref OtherClass obj2)
+    {
+        OtherClass swap;
+        swap = obj1;
+        obj1 = obj2;
+        obj2 = swap;
+    }
+
+    /* params произвольное количество аргументов 
+     * params в списке параметров всегда последний
+     * */
+    public int MinVal(string str, params int[] numb) 
+    {
+        int min;
+        if (numb.Length == 0)
+        {
+            Console.WriteLine("No argument");
+            return 0;
+        }
+
+        min = numb[0];
+        foreach (int a in numb)
+            if (a < min) min = a;
+
+        Console.Write(str + "\t");
+        return min;
+    }
+
+}
+
+class FactoryClass
+{
+    int alpha, beta;
+
+    public FactoryClass Factory(int a, int b)
+    {
+        FactoryClass obj = new FactoryClass();
+
+        obj.alpha = a;
+        obj.beta = b;
+
+        return obj;
+    }
+
+    public void Show()
+    {
+        Console.WriteLine("a: {0} , b: {1}", alpha, beta);
     }
 }

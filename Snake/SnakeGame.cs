@@ -14,11 +14,11 @@ class SnakeGame
 class DriverGame
 {
     private List<Snake> snake = new List<Snake>();
-    Snake head = new Snake(5, 5, ConsoleColor.Yellow);
-    Snake prev = new Snake(5, 5, ConsoleColor.Black);
     Square[,] square = new Square[20, 40];
     bool draw = true;
     ConsoleKeyInfo keys;
+    int directX = 0;
+    int directY = 0;
 
     public DriverGame()
     {
@@ -33,50 +33,40 @@ class DriverGame
             InputKey();
             UpDate();
             if (draw) Draw();
+            keys = Console.ReadKey();
         } while (keys.Key != ConsoleKey.Escape);
     }
 
     void InputKey()
     {
-        keys = Console.ReadKey();
         if (keys.Key == ConsoleKey.UpArrow)
         {
-            snake[0].coordY = head.coordY;
-            snake[0].coordX = head.coordX;
-            head.coordY--;
+            directY = -1;
+            directX = 0;
             draw = true;
         }
         if (keys.Key == ConsoleKey.DownArrow)
         {
-            snake[0].coordY = head.coordY;
-            snake[0].coordX = head.coordX;
-            head.coordY++;
+            directY = 1;
+            directX = 0;
             draw = true;
         }
         if (keys.Key == ConsoleKey.LeftArrow)
         {
-            snake[0].coordY = head.coordY;
-            snake[0].coordX = head.coordX;
-            head.coordX--;
+            directY = 0;
+            directX = -1;
             draw = true;
         }
         if (keys.Key == ConsoleKey.RightArrow)
         {
-            snake[0].coordY = head.coordY;
-            snake[0].coordX = head.coordX;
-            head.coordX++;
+            directY = 0;
+            directX = 1;
             draw = true;
         }
     }
 
     void UpDate()
     {
-        for (int a = snake.Count-1; a > 0; a--)
-        {
-            snake[a].coordX = snake[a - 1].coordX;
-            snake[a].coordY = snake[a - 1].coordY;
-        }
-
         for (int a = 0; a < square.GetLength(0); a++)
         {
             for (int b = 0; b < square.GetLength(1); b++)
@@ -85,14 +75,24 @@ class DriverGame
             }
         }
 
-        square[head.coordY, head.coordX].ch = '0';
-        square[head.coordY, head.coordX].color = head.color;
-
-        for (int a = snake.Count-1; a > 0; a--)
+        for (int a = snake.Count - 1; a >= 0; a--)
         {
-            square[snake[a].coordY, snake[a].coordX].ch = '8';
+            square[snake[a].coordY, snake[a].coordX].ch = snake[a].body;
             square[snake[a].coordY, snake[a].coordX].color = snake[a].color;
         }
+
+        UpdateSnakeBody();
+    }
+
+    void UpdateSnakeBody()
+    {
+        for (int a = snake.Count - 1; a > 0; a--)
+        {
+            snake[a].coordX = snake[a - 1].coordX;
+            snake[a].coordY = snake[a - 1].coordY;
+        }
+        snake[0].coordX += directX;
+        snake[0].coordY += directY;
     }
 
     void Draw()
@@ -113,8 +113,9 @@ class DriverGame
     {
         for (int a = 0; a < 10; a++)
         {
-            snake.Add(new Snake(5,5, ConsoleColor.Green));
+            snake.Add(new Snake(5,5, ConsoleColor.Green, a.ToString()));
         }
+        snake[0].color = ConsoleColor.Yellow;
 
         for (int a = 0; a < square.GetLength(0); a++)
         {
@@ -131,12 +132,14 @@ class Snake
     public int coordX;
     public int coordY;
     public ConsoleColor color;
+    public char body;
 
-    public Snake(int x, int y, ConsoleColor color)
+    public Snake(int x, int y, ConsoleColor color, string body)
     {
         coordX = x;
         coordY = y;
         this.color = color;
+        this.body = Convert.ToChar(body);
     }
 }
 
