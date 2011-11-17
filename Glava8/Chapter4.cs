@@ -71,5 +71,18 @@ class Chapter5
             FactoryClass anotherObj = obj.Factory(a, b); //создать новый объект
             anotherObj.Show();
         }
+
+        /*********************************/
+
+        int numfactors;
+        int[] factors;
+
+        factors = obj.FindFactors(1000, out numfactors);
+
+        Console.WriteLine("fact 1000: ");
+        for (int i = 0; i < numfactors; i++)
+            Console.Write(factors[i] + " ");
+
+        Console.WriteLine();
     }
 }

@@ -11,7 +11,7 @@ class Example
                         "2. Stack\n" +
                         "3. Передача объектов по ссылке\n" +
                         "4. ref out params\n" +
-                        "5. return object\n" +
+                        "5. return object, array\n" +
                         //"6. quicksort\n" +
                         //"7. String\n" +
                         //"8. Число в слова\n" +
@@ -462,7 +462,7 @@ class FactoryClass
 {
     int alpha, beta;
 
-    public FactoryClass Factory(int a, int b)
+    public FactoryClass Factory(int a, int b) //метод который возвращает объект этого класса
     {
         FactoryClass obj = new FactoryClass();
 
@@ -475,5 +475,20 @@ class FactoryClass
     public void Show()
     {
         Console.WriteLine("a: {0} , b: {1}", alpha, beta);
+    }
+
+    public int[] FindFactors(int num, out int numfactors) //метод возвращает массив (множители num)
+    {
+        int[] facts = new int[80];
+        int a, b;
+
+        for (a=2, b =0; a<num/2 +1; a++)
+            if ((num % a) == 0)
+            {
+                facts[b] = a;
+                b++;
+            }
+        numfactors = b;
+        return facts;
     }
 }
