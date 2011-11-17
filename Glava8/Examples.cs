@@ -12,7 +12,7 @@ class Example
                         "3. Передача объектов по ссылке\n" +
                         "4. ref out params\n" +
                         "5. return object, array\n" +
-                        //"6. quicksort\n" +
+                        "6. overload\n" +
                         //"7. String\n" +
                         //"8. Число в слова\n" +
                         "\n");
@@ -45,10 +45,10 @@ class Example
                 Console.Clear();
                 Chap5();
                 break;
-            //case "6":
-            //    Console.Clear();
-            //    Chap6();
-            //    break;
+            case "6":
+                Console.Clear();
+                Chap6();
+                break;
             //case "7":
             //    Console.Clear();
             //    Chap7();
@@ -92,6 +92,11 @@ class Example
     static void Chap5()
     {
         Chapter5 chapter5 = new Chapter5();
+    }
+
+    static void Chap6()
+    {
+        Chapter6 chapter6 = new Chapter6();
     }
 }
 
