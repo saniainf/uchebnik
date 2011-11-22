@@ -1,9 +1,7 @@
-# Herbert Schildt
-# C# 4.0 The Complete Reference
-мои примеры - лично для меня =)
+# Herbert Schildt C# 4.0 The Complete Reference
+my examples - for me =)
 
-* Разделение по главам книги
-* В каждой главе чаптеры, задаются произвольно.
+* Separation of chapters of the book
 
 Copyright (C) 2011 Sania project
 
