@@ -1,16 +1,11 @@
-# Stay awhile and listen
+# Herbert Schildt
+# C# 4.0 The Complete Reference
+мои примеры - лично для меня =)
 
-* Read the [FAQ](/mooege/mooege/wiki/FAQ) before asking!
-* Read the [WARNING](https://github.com/mooege/mooege/blob/master/WARNING) before starting to use this software!
-* Check out [mooege.org](http://www.mooege.org) and the [forums](http://www.mooege.org/index).
-* Status: Will get you ingame.. not much else.
-* IRC (**irc.synirc.net**):
-  - **#mooege.chat** (general chat)
-  - **#mooege** (dev talk)
-  - **#mooege.announce** (_only_ announcements and the commit feed)
-* [Twitter](http://twitter.com/#!/mooege), [Commit Feed](http://twitter.com/#!/mooegelog)
+* Разделение по главам книги
+* В каждой главе чаптеры, задаются произвольно.
 
-Copyright (C) 2011 mooege project
+Copyright (C) 2011 Sania project
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
