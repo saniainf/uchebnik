@@ -62,6 +62,7 @@ class Chapter5
 {
     public Chapter5()
     {
+        /*Возврат объекта из метода*/
         FactoryClass obj = new FactoryClass();
         int a, b;
 
@@ -73,7 +74,7 @@ class Chapter5
         }
 
         /*********************************/
-
+        /*возврат массива из метода*/
         int numfactors;
         int[] factors;
 
