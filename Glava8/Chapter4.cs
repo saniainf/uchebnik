@@ -62,6 +62,7 @@ class Chapter5
 {
     public Chapter5()
     {
+        /*Возврат объекта из метода*/
         FactoryClass obj = new FactoryClass();
         int a, b;
 
@@ -71,5 +72,18 @@ class Chapter5
             FactoryClass anotherObj = obj.Factory(a, b); //создать новый объект
             anotherObj.Show();
         }
+
+        /*********************************/
+        /*возврат массива из метода*/
+        int numfactors;
+        int[] factors;
+
+        factors = obj.FindFactors(1000, out numfactors);
+
+        Console.WriteLine("fact 1000: ");
+        for (int i = 0; i < numfactors; i++)
+            Console.Write(factors[i] + " ");
+
+        Console.WriteLine();
     }
 }

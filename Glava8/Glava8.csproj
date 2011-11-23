@@ -36,7 +36,9 @@
   <ItemGroup>
     <Compile Include="Chapter3.cs" />
     <Compile Include="Chapter4.cs" />
+    <Compile Include="Chapter6.cs" />
     <Compile Include="Examples.cs" />
+    <Compile Include="Stack.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

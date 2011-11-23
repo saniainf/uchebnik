@@ -1,9 +1,11 @@
 ﻿using System;
 
+
 class Example
 {
     public static void Main()
     {
+        /*
         ConsoleKeyInfo cki;
         // Prevent example from ending if CTL+C is pressed.
         Console.TreatControlCAsInput = true;
@@ -39,5 +41,7 @@ class Example
             }
             Console.WriteLine();
         }
+         * */
     }
 }
+
