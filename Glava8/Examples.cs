@@ -13,7 +13,7 @@ class Example
                         "4. ref out params\n" +
                         "5. return object, array\n" +
                         "6. overload\n" +
-                        //"7. String\n" +
+                        "7. other\n" +
                         //"8. Число в слова\n" +
                         "\n");
         Console.ForegroundColor = ConsoleColor.Green;
@@ -49,10 +49,10 @@ class Example
                 Console.Clear();
                 Chap6();
                 break;
-            //case "7":
-            //    Console.Clear();
-            //    Chap7();
-            //    break;
+            case "7":
+                Console.Clear();
+                Chap7();
+                break;
             //case "8":
             //    Console.Clear();
             //    Chap8();
@@ -97,6 +97,11 @@ class Example
     static void Chap6()
     {
         Chapter6 chapter6 = new Chapter6();
+    }
+
+    static void Chap7()
+    {
+        Chapter7 chapter7 = new Chapter7();
     }
 }
 

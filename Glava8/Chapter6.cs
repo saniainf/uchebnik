@@ -28,11 +28,11 @@ class Overload
     {
         Console.WriteLine("int string");
     }
-}
+} //перегрузка методов
 
 class OverloadConstr
 {
-    int a, b;
+    public int a, b;
 
     /*первый*/
     public OverloadConstr(string str)  //сперва происходит вызов 2 контруктора
@@ -63,4 +63,4 @@ class OverloadConstr
         Console.WriteLine("constr 3");
         Console.ResetColor();
     }
-}
+} //перегрузка конструкторов с this.
