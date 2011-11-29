@@ -66,3 +66,8 @@ class InicialObj
         Console.WriteLine();
     }
 }
+
+class ReversStr
+{
+
+}

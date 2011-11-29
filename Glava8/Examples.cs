@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 class Example
 {
-    static void Main()
+    static int Main() //по завершении возвращает код состояния в систему int
     {
         string numb;
         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -14,7 +14,7 @@ class Example
                         "5. return object, array\n" +
                         "6. overload\n" +
                         "7. other\n" +
-                        //"8. Число в слова\n" +
+                        "0. Выход\n" +
                         "\n");
         Console.ForegroundColor = ConsoleColor.Green;
         Console.Write("Введи номер части: ");
@@ -53,15 +53,15 @@ class Example
                 Console.Clear();
                 Chap7();
                 break;
-            //case "8":
-            //    Console.Clear();
-            //    Chap8();
-            //    break;
+            case "0":
+                Console.Clear();
+                return 0; // программа завершилась нормльно
             default:
                 Console.WriteLine("не вводи всякую херню\n\n\n");
                 Main();
                 break;
         }
+        return 0; // программа завершилась нормльно
     }
 
     static void Chap1()
