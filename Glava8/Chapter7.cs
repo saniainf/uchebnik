@@ -26,6 +26,14 @@ class Chapter7
         obj1.PrintF("тестовый текст типа", stop: -1, start: 9);
         obj1.PrintF("тестовый текст типа", stop: 15);
         obj1.PrintF(stop: 15, str: "тестовый текст типа");
+
+        /*рекурсия*/
+        string str = "this is test string";
+        ReversStr reversObj = new ReversStr();
+        Console.WriteLine("\n\noriginal string: {0}", str);
+        Console.Write("revers string: ");
+        reversObj.PrintRevers(str);
+        Console.WriteLine();
     }
 }
 
@@ -69,5 +77,12 @@ class InicialObj
 
 class ReversStr
 {
-
+    public void PrintRevers(string str)  //рекурсия
+    {
+        if (str.Length > 0)
+            PrintRevers(str.Substring(1, str.Length - 1));
+        else
+            return;
+        Console.Write(str[0]);
+    }
 }

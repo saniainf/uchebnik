@@ -13,7 +13,7 @@ class Example
                         "4. ref out params\n" +
                         "5. return object, array\n" +
                         "6. overload\n" +
-                        "7. other\n" +
+                        "7. предача аргументов / рекурсия\n" +
                         "0. Выход\n" +
                         "\n");
         Console.ForegroundColor = ConsoleColor.Green;

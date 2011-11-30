@@ -35,7 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Chapter3.cs" />
-    <Compile Include="Chapter4.cs" />
+    <Compile Include="Chapter4_5.cs" />
     <Compile Include="Chapter6.cs" />
     <Compile Include="Chapter7.cs" />
     <Compile Include="Examples.cs" />
