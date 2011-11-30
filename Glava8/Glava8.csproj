@@ -38,6 +38,7 @@
     <Compile Include="Chapter4_5.cs" />
     <Compile Include="Chapter6.cs" />
     <Compile Include="Chapter7.cs" />
+    <Compile Include="Chapter8.cs" />
     <Compile Include="Examples.cs" />
     <Compile Include="Stack.cs" />
     <Compile Include="StaticClass.cs" />
