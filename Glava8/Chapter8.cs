@@ -4,6 +4,8 @@ class Chapter8
 {
     public Chapter8()
     {
+        /*применение static класса MainService
+         * */
         MainService.PrintF("afafasfasfasf\n");
         MainService.PrintF(123123 + "\n");
         MainService.PrintF(88888888);
