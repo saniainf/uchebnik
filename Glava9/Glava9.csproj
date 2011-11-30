@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3B2BFB0C-7EC4-4160-B4CF-354D6EA9B001}</ProjectGuid>
+    <ProjectGuid>{826209E1-3B6A-4182-9597-E6BC6E29CA3E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Glava8</RootNamespace>
-    <AssemblyName>Glava8</AssemblyName>
+    <RootNamespace>Glava9</RootNamespace>
+    <AssemblyName>Glava9</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -34,14 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Chapter3.cs" />
-    <Compile Include="Chapter4_5.cs" />
-    <Compile Include="Chapter6.cs" />
-    <Compile Include="Chapter7.cs" />
-    <Compile Include="Chapter8.cs" />
+    <Compile Include="Chapter1.cs" />
     <Compile Include="Examples.cs" />
-    <Compile Include="Stack.cs" />
-    <Compile Include="StaticClass.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
