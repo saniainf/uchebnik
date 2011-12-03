@@ -6,7 +6,7 @@ class Example
     {
         string numb;
         Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.Write("1. string\n" +
+        Console.Write("1. overload operator\n" +
                         //"2. string\n" +
                         //"3. string\n" +
                         //"4. string\n" +
