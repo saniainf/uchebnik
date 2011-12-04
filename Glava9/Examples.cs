@@ -41,10 +41,10 @@ class Example
                 Console.Clear();
                 Chap4();
                 break;
-            //case "5":
-            //    Console.Clear();
-            //    Chap5();
-            //    break;
+            case "5":
+                Console.Clear();
+                Chap5();
+                break;
             //case "6":
             //    Console.Clear();
             //    Chap6();
@@ -88,10 +88,10 @@ class Example
         Chapter4 chapter4 = new Chapter4();
     }
 
-    //static void Chap5()
-    //{
-    //    Chapter5 chapter5 = new Chapter5();
-    //}
+    static void Chap5()
+    {
+        Chapter5 chapter5 = new Chapter5();
+    }
 
     //static void Chap6()
     //{
