@@ -38,6 +38,7 @@
     <Compile Include="Chapter2.cs" />
     <Compile Include="Chapter3.cs" />
     <Compile Include="Chapter4.cs" />
+    <Compile Include="Chapter5.cs" />
     <Compile Include="Examples.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,7 +10,7 @@ class Example
                         "2. overload >, <\n" +
                         "3. overload true false\n" +
                         "4. oberload !, |, &, &&, ||\n" +
-                        //"5. string\n" +
+                        "5. convert\n" +
                         //"6. string\n" +
                         //"7. string\n" +
                         //"8. string\n" +
