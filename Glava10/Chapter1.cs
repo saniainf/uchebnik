@@ -7,3 +7,11 @@ class Chapter1
 
     }
 }
+
+class Accesor
+{
+    public Accesor()
+    {
+
+    }
+}
