@@ -9,7 +9,7 @@ class Example
         Console.Write("1. indexator & array\n" +
                         "2. indexator no array\n" +
                         "3. properties\n" +
-                        //"4. string\n" +
+                        "4. index & properties\n" +
                         //"5. string\n" +
                         //"6. string\n" +
                         //"7. string\n" +
@@ -37,10 +37,10 @@ class Example
                 Console.Clear();
                 Chap3();
                 break;
-            //case "4":
-            //    Console.Clear();
-            //    Chap4();
-            //    break;
+            case "4":
+                Console.Clear();
+                Chap4();
+                break;
             //case "5":
             //    Console.Clear();
             //    Chap5();
@@ -83,10 +83,10 @@ class Example
         Chapter3 chapter3 = new Chapter3();
     }
 
-    //static void Chap4()
-    //{
-    //    Chapter4 chapter4 = new Chapter4();
-    //}
+    static void Chap4()
+    {
+        Chapter4 chapter4 = new Chapter4();
+    }
 
     //static void Chap5()
     //{

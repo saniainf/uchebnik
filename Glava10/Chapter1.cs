@@ -5,54 +5,33 @@ class Chapter1
     public Chapter1()
     {
         FailSoftArray fs = new FailSoftArray(5);
-        int x;
 
-        // Show quiet failures. 
-        Console.WriteLine("Fail quietly.");
-        for (int i = 0; i < (fs.Length * 2); i++)
-            fs[i] = i * 10;
-
-        for (int i = 0; i < (fs.Length * 2); i++)
-        {
-            x = fs[i];
-            if (x != -1) Console.Write(x + " ");
-        }
-        Console.WriteLine();
-
-        // Now, display failures. 
-        Console.WriteLine("\nFail with error reports.");
-        for (int i = 0; i < (fs.Length * 2); i++)
+        // Use Error property. 
+        for (int i = 0; i < fs.Length + 1; i++)
         {
             fs[i] = i * 10;
-            if (fs.ErrFlag)
-                Console.WriteLine("fs[" + i + "] out-of-bounds");
-        }
-
-        for (int i = 0; i < (fs.Length * 2); i++)
-        {
-            x = fs[i];
-            if (!fs.ErrFlag) Console.Write(x + " ");
-            else
-                Console.WriteLine("fs[" + i + "] out-of-bounds");
+            if (fs.Error)
+                Console.WriteLine("Error with index " + i);
         } 
-
     }
 }
 
 class FailSoftArray
 {
-    int[] a;    // reference to underlying array  
+    int[] a; // reference to underlying array  
 
-    public int Length; // Length is public 
-
-    public bool ErrFlag; // indicates outcome of last operation 
-
-    // Construct array given its size. 
+    // Construct array given its size.  
     public FailSoftArray(int size)
     {
         a = new int[size];
         Length = size;
     }
+
+    // An auto-implemented, read-only Length property. 
+    public int Length { get; private set; }
+
+    // An auto-implemented, read-only Error property. 
+    public bool Error { get; private set; }
 
     // This is the indexer for FailSoftArray. 
     public int this[int index]
@@ -62,12 +41,12 @@ class FailSoftArray
         {
             if (ok(index))
             {
-                ErrFlag = false;
+                Error = false;
                 return a[index];
-            }                                                                                                                                                                                                                                                                                                                                                                                     
+            }
             else
             {
-                ErrFlag = true;
+                Error = true;
                 return 0;
             }
         }
@@ -78,9 +57,9 @@ class FailSoftArray
             if (ok(index))
             {
                 a[index] = value;
-                ErrFlag = false;
+                Error = false;
             }
-            else ErrFlag = true;
+            else Error = true;
         }
     }
 
@@ -89,5 +68,5 @@ class FailSoftArray
     {
         if (index >= 0 & index < Length) return true;
         return false;
-    }
+    } 
 }
