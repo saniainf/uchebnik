@@ -7,6 +7,6 @@ class _ListS<T>
 
     public _ListS(int count)
     {
-        
+        T[] qew = new T[50];
     }
 }
