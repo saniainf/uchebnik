@@ -7,13 +7,13 @@ class Example
         string numb;
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.Write("1. string\n" +
-            //"2. string\n" +
-            //"3. string\n" +
-            //"4. string\n" +
-            //"5. string\n" +
-            //"6. string\n" +
-            //"7. string\n" +
-            //"8. string\n" +
+                        "2. string\n" +
+                        //"3. string\n" +
+                        //"4. string\n" +
+                        //"5. string\n" +
+                        //"6. string\n" +
+                        //"7. string\n" +
+                        //"8. string\n" +
                         "0. Выход\n" +
                         "\n");
         Console.ForegroundColor = ConsoleColor.Green;
@@ -29,10 +29,10 @@ class Example
                 Console.Clear();
                 Chap1();
                 break;
-            //case "2":
-            //    Console.Clear();
-            //    Chap2();
-            //    break;
+            case "2":
+                Console.Clear();
+                Chap2();
+                break;
             //case "3":
             //    Console.Clear();
             //    Chap3();
@@ -73,10 +73,10 @@ class Example
         Chapter1 chapter1 = new Chapter1();
     }
 
-    //static void Chap2()
-    //{
-    //    Chapter2 chapter2 = new Chapter2();
-    //}
+    static void Chap2()
+    {
+        Chapter2 chapter2 = new Chapter2();
+    }
 
     //static void Chap3()
     //{
