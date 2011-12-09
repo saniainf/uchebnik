@@ -8,17 +8,16 @@ class Chapter1
         Triangle triangle2 = new Triangle(8.0, 12.0, "pryamougol");
 
         Console.WriteLine("triangle1");
-        triangle1.ShowStyle();
-        triangle1.ShowDim();
+        triangle1.Show();
         Console.WriteLine("Area: {0}", triangle1.Area());
         Console.WriteLine();
         Console.WriteLine("triangle2");
-        triangle2.ShowStyle();
-        triangle2.ShowDim();
+        triangle2.Show();
         Console.WriteLine("Area: {0}", triangle2.Area());
     }
 }
 
+/* базовый класc */
 class object2D
 {
     protected double Width;
@@ -30,17 +29,18 @@ class object2D
         this.Height = h;
     }
 
-    public void ShowDim()
+    public void Show()
     {
         Console.WriteLine("Width: {0}, Height: {1}", Width, Height);
     }
 }
 
+/* наследуемый класc */
 class Triangle : object2D
 {
     string Style;
 
-    public Triangle(double width, double height, string style):base (width, height)
+    public Triangle(double width, double height, string style):base (width, height) //переменные передаются в конструктор базового класса
     {
         this.Style = style;
     }
@@ -50,8 +50,9 @@ class Triangle : object2D
         return Width * Height / 2;
     }
 
-    public void ShowStyle()
+    new public void Show() //метод Show из базового класса скрывается
     {
+        base.Show(); //вызов метода Show из базового класса
         Console.WriteLine("Triangle " + Style);
     }
 }
