@@ -10,7 +10,7 @@ class Example
             "2. virtual переопределение\n" +
             "3. virtual2\n" +
             "4. abstract\n" +
-            //"5. string\n" +
+            "5. class object\n" +
             //"6. string\n" +
             //"7. string\n" +
             //"8. string\n" +
@@ -41,10 +41,10 @@ class Example
                 Console.Clear();
                 Chap4();
                 break;
-            //case "5":
-            //    Console.Clear();
-            //    Chap5();
-            //    break;
+            case "5":
+                Console.Clear();
+                Chap5();
+                break;
             //case "6":
             //    Console.Clear();
             //    Chap6();
@@ -88,10 +88,10 @@ class Example
         Chapter4 chapter4 = new Chapter4();
     }
 
-    //static void Chap5()
-    //{
-    //    Chapter5 chapter5 = new Chapter5();
-    //}
+    static void Chap5()
+    {
+        Chapter5 chapter5 = new Chapter5();
+    }
 
     //static void Chap6()
     //{
