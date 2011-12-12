@@ -6,14 +6,14 @@ class Example
     {
         string numb;
         Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.Write("1. string\n" +
-                        "2. string\n" +
-                        //"3. string\n" +
-                        //"4. string\n" +
-                        //"5. string\n" +
-                        //"6. string\n" +
-                        //"7. string\n" +
-                        //"8. string\n" +
+        Console.Write("1. наследование\n" +
+                        "2. virtual переопределение\n" +
+            //"3. string\n" +
+            //"4. string\n" +
+            //"5. string\n" +
+            //"6. string\n" +
+            //"7. string\n" +
+            //"8. string\n" +
                         "0. Выход\n" +
                         "\n");
         Console.ForegroundColor = ConsoleColor.Green;

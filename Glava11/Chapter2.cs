@@ -37,7 +37,7 @@ class DerivedAlpha : BaseClass
     }
 }
 
-class DerivedBeta:BaseClass
+class DerivedBeta : BaseClass
 {
     public int a = 20;
     public override void Metod()
