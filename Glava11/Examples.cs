@@ -7,8 +7,8 @@ class Example
         string numb;
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.Write("1. наследование\n" +
-                        "2. virtual переопределение\n" +
-            //"3. string\n" +
+            "2. virtual переопределение\n" +
+            "3. virtual2\n" +
             //"4. string\n" +
             //"5. string\n" +
             //"6. string\n" +
@@ -33,10 +33,10 @@ class Example
                 Console.Clear();
                 Chap2();
                 break;
-            //case "3":
-            //    Console.Clear();
-            //    Chap3();
-            //    break;
+            case "3":
+                Console.Clear();
+                Chap3();
+                break;
             //case "4":
             //    Console.Clear();
             //    Chap4();
@@ -78,10 +78,10 @@ class Example
         Chapter2 chapter2 = new Chapter2();
     }
 
-    //static void Chap3()
-    //{
-    //    Chapter3 chapter3 = new Chapter3();
-    //}
+    static void Chap3()
+    {
+        Chapter3 chapter3 = new Chapter3();
+    }
 
     //static void Chap4()
     //{
