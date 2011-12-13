@@ -12,7 +12,7 @@ class Chapter1
             fs[i] = i * 10;
             if (fs.Error)
                 Console.WriteLine("Error with index " + i);
-        } 
+        }
     }
 }
 
