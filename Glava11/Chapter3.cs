@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using System;
 
 class Chapter3
@@ -135,4 +136,11 @@ class RectangleTwoD : TwoDShape
     {
         return Width * Height;
     }
+=======
+using System;
+
+class Chapter3
+{
+
+>>>>>>> 6f9adae61db3b27e4a9ed0324de2d1cd070b6a7e
 }
