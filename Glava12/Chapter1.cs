@@ -1,6 +1,6 @@
 ﻿using System;
 
-class Chapter1
+class Chapter1 : IConvertible
 {
     InterfaceRealise1 obj1 = new InterfaceRealise1();
     InterfaceRealise2 obj2 = new InterfaceRealise2();
@@ -22,12 +22,15 @@ class Chapter1
     }
 }
 
-public interface IClass //интерфейс
+public interface IClassBase //интерфейс базовый
 {
     int alpha();
     void Reset();
-    void PrintF();
+}
 
+public interface IClass : IClassBase //интерфейс наследующий
+{
+    void PrintF();
     int Value { get; set; }
 }
 
