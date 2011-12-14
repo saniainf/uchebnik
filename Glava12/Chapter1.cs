@@ -1,6 +1,6 @@
 ﻿using System;
 
-class Chapter1 : IConvertible
+class Chapter1
 {
     InterfaceRealise1 obj1 = new InterfaceRealise1();
     InterfaceRealise2 obj2 = new InterfaceRealise2();
