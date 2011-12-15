@@ -59,7 +59,8 @@ class Board
         for (int i = 0; i < Height; i++)
             for (int j = 0; j < Width; j++)
             {
-                ChrArray[i, j].chr = (char)rnd.NextRnd(65, 91);
+                //ChrArray[i, j].chr = (char)rnd.NextRnd(65, 91);
+                ChrArray[i, j].chr = (char)88;
                 ChrArray[i, j].color = (ConsoleColor)(rnd.NextRnd(1, 15));
             }
     }
