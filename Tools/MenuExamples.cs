@@ -77,6 +77,7 @@ class Example
     static void Chap2()
     {
         int[] arTst = new int[50];
+        int[] arTst2 = new int[50];
         _Random rnd = new _Random();
 
         for (int i = 0; i < arTst.Length; i++)
@@ -84,14 +85,26 @@ class Example
             arTst[i] = rnd.NextRnd(1, 200);
         }
 
-        foreach (int a in arTst)
-            Console.WriteLine(a);
+        for (int i = 0; i < arTst.Length; i++)
+        {
+            arTst2[i] = rnd.NextRnd(1, 200);
+        }
 
+        foreach (int a in arTst)
+            Console.Write(a);
+
+        Console.WriteLine();
+
+        foreach (int a in arTst2)
+            Console.Write(a);
+
+        Console.WriteLine();
     }
 
     static void Chap3()
     {
         int[] arTst = new int[50];
+        int[] arTst2 = new int[50];
         Random rnd = new Random(DateTime.Now.Millisecond);
 
         for (int i = 0; i < arTst.Length; i++)
@@ -99,8 +112,20 @@ class Example
             arTst[i] = rnd.Next(1, 200);
         }
 
+        for (int i = 0; i < arTst.Length; i++)
+        {
+            arTst2[i] = rnd.Next(1, 200);
+        }
+
         foreach (int a in arTst)
-            Console.WriteLine(a);
+            Console.Write(a);
+        
+        Console.WriteLine();
+
+        foreach (int a in arTst2)
+            Console.Write(a);
+
+        Console.WriteLine();
     }
 
     //static void Chap4()
