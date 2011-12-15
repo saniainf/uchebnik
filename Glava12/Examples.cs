@@ -6,9 +6,9 @@ class Example
     {
         string numb;
         Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.Write("1. string\n" +
-            "2. string\n" +
-            //"3. string\n" +
+        Console.Write("1. interface\n" +
+            "2. explicit implementation\n" +
+            "3. struct\n" +
             //"4. string\n" +
             //"5. string\n" +
             //"6. string\n" +
@@ -33,10 +33,10 @@ class Example
                 Console.Clear();
                 Chap2();
                 break;
-            //case "3":
-            //    Console.Clear();
-            //    Chap3();
-            //    break;
+            case "3":
+                Console.Clear();
+                Chap3();
+                break;
             //case "4":
             //    Console.Clear();
             //    Chap4();
@@ -78,10 +78,10 @@ class Example
         Chapter2 chapter2 = new Chapter2();
     }
 
-    //static void Chap3()
-    //{
-    //    Chapter3 chapter3 = new Chapter3();
-    //}
+    static void Chap3()
+    {
+        Chapter3 chapter3 = new Chapter3();
+    }
 
     //static void Chap4()
     //{

@@ -8,19 +8,19 @@ interface IEven
 
 class MyClass : IEven
 {
-
-    // Explicit implementation. Notice that this member is private 
-    // by default. 
+    /* явная реализация метода
+     * метод privat по умолчанию
+    */
     bool IEven.IsOdd(int x)
     {
         if ((x % 2) != 0) return true;
         else return false;
     }
 
-    // Normal implementation. 
+    /* обычная реализация */
     public bool IsEven(int x)
     {
-        IEven o = this; // Interface reference to the invoking object. 
+        IEven o = this; // ссылка типа интерфейса на вызывающий объект
 
         return !o.IsOdd(x);
     }
@@ -37,12 +37,11 @@ class Chapter2
         if (result) Console.WriteLine("4 is even.");
 
         // result = ob.IsOdd(4); // Error, IsOdd not exposed. 
-
-        // But, this is OK. It creates an IEven reference to a MyClass object 
-        // and then calls IsOdd() through that reference. 
+        /* ссылке типа интерфейса присваиваем
+         * объект класса реализующкго интерфейс
+        */
         IEven iRef = ob;
         result = iRef.IsOdd(3);
         if (result) Console.WriteLine("3 is odd.");
-
     }
 }
