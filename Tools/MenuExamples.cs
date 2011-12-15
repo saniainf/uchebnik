@@ -9,7 +9,7 @@ class Example
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.Write("1. string\n" +
             "2. random\n" +
-            //"3. string\n" +
+            "3. random test\n" +
             //"4. string\n" +
             //"5. string\n" +
             //"6. string\n" +
@@ -34,10 +34,10 @@ class Example
                 Console.Clear();
                 Chap2();
                 break;
-            //case "3":
-            //    Console.Clear();
-            //    Chap3();
-            //    break;
+            case "3":
+                Console.Clear();
+                Chap3();
+                break;
             //case "4":
             //    Console.Clear();
             //    Chap4();
@@ -76,16 +76,32 @@ class Example
 
     static void Chap2()
     {
+        int[] arTst = new int[50];
         _Random rnd = new _Random();
-        for (int i = 0; i < 50; i++)
-            Console.WriteLine(rnd.NextRnd(2, 200));
+
+        for (int i = 0; i < arTst.Length; i++)
+        {
+            arTst[i] = rnd.NextRnd(1, 200);
+        }
+
+        foreach (int a in arTst)
+            Console.WriteLine(a);
 
     }
 
-    //static void Chap3()
-    //{
-    //    Chapter3 chapter3 = new Chapter3();
-    //}
+    static void Chap3()
+    {
+        int[] arTst = new int[50];
+        Random rnd = new Random(DateTime.Now.Millisecond);
+
+        for (int i = 0; i < arTst.Length; i++)
+        {
+            arTst[i] = rnd.Next(1, 200);
+        }
+
+        foreach (int a in arTst)
+            Console.WriteLine(a);
+    }
 
     //static void Chap4()
     //{

@@ -31,6 +31,7 @@ class Board
     public int Width { get; private set; }
 
     _Random rnd = new _Random();
+    Random rndTst = new Random();
 
     /* массив поля */
     Symbol[,] ChrArray;
@@ -61,7 +62,8 @@ class Board
             {
                 //ChrArray[i, j].chr = (char)rnd.NextRnd(65, 91);
                 ChrArray[i, j].chr = (char)88;
-                ChrArray[i, j].color = (ConsoleColor)(rnd.NextRnd(1, 15));
+                //ChrArray[i, j].color = (ConsoleColor)(rnd.NextRnd(1, 15));
+                ChrArray[i, j].color = (ConsoleColor)(rndTst.Next(0, 15));
             }
     }
 }
