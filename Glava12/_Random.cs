@@ -16,7 +16,7 @@ class _Random
 
     }
 
-    public int NextRnd(int min, int max) // 0 , 15
+    public int NextRnd(int min, int max) // 5 , 15
     {
         if (Max != max & Min != min)
         {
@@ -33,7 +33,7 @@ class _Random
         return 0;    
     }
 
-    int Rnd(int min, int max) // 0 , 15
+    int Rnd(int min, int max) // 5 , 15
     {
         int a;
         int b;
@@ -41,10 +41,10 @@ class _Random
         if (max - tmpMax == 2) tmpMax = 1;
         if (tmpMin == Max - 2) tmpMin = 1;
 
-        a = random.Next(0, max - tmpMax++);
-        b = random.Next(0, tmpMin++);
+        a = random.Next(Min, max - tmpMax++);
+        b = random.Next(Min, min + tmpMin++);
 
-        return a + b;
+        return (a + b) - min;
     }
 }
 

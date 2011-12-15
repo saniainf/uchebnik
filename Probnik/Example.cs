@@ -5,6 +5,15 @@ class Example
 {
     public static void Main()
     {
+        char ch;
+
+        for (int i = 65; i < 91; i++)
+        {
+            ch = (char)i;
+            Console.Write(ch);
+        }
+            
+
         /*
         ConsoleKeyInfo cki;
         // Prevent example from ending if CTL+C is pressed.

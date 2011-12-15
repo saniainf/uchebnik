@@ -17,7 +17,7 @@ class Chapter3
             for (int j = 0; j < board.Width; j++)
             {
                 Console.ForegroundColor = board[i, j].color;
-                Console.Write(board[i, j].chr);
+                Console.Write(board[i, j].chr + " ");
             }
             Console.WriteLine();
         }
@@ -29,6 +29,8 @@ class Board
     /* размеры поля */
     public int Height { get; private set; }
     public int Width { get; private set; }
+
+    _Random rnd = new _Random();
 
     /* массив поля */
     Symbol[,] ChrArray;
@@ -57,41 +59,9 @@ class Board
         for (int i = 0; i < Height; i++)
             for (int j = 0; j < Width; j++)
             {
-                ChrArray[i, j].chr = 'G';
-                ChrArray[i, j].color = (ConsoleColor)(5);
+                ChrArray[i, j].chr = (char)rnd.NextRnd(65, 91);
+                ChrArray[i, j].color = (ConsoleColor)(rnd.NextRnd(1, 15));
             }
-    }
-
-    void Rnd()
-    {
-        Random rnd = new Random();
-        int size = Height * Width;
-
-        int[] arrColor = new int[size];
-
-        for (int i = 0; i < size / 15; i++)
-        {
-            for (int j = 0; j < 15; j++)
-            {
-
-            }
-        }
-
-        List<int> ar = new List<int>();
-        for (int i = 0; i < 15; i++)
-            ar.Add(i);
-
-        int[] result = new int[15];
-        for (int i = 0; i < 15; i++)
-        {
-            int pos = rnd.Next(0, ar.Count);
-            result[i] = ar[pos];
-            ar.RemoveAt(pos);
-        }
-
-        foreach (int num in result)
-            Console.Write(num + " ");
-        Console.WriteLine();
     }
 }
 
