@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 class _ListS<T>
 {
-    int count;
+    //int count;
 
-    public _ListS(int count)
-    {
-        T[] qew = new T[50];
-    }
+    //public _ListS(int count)
+    //{
+    //    T[] qew = new T[50];
+    //}
 }

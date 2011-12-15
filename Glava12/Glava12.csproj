@@ -38,6 +38,7 @@
     <Compile Include="Chapter2.cs" />
     <Compile Include="Chapter3.cs" />
     <Compile Include="Examples.cs" />
+    <Compile Include="_Random.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

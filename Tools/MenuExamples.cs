@@ -8,7 +8,7 @@ class Example
         string numb;
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.Write("1. string\n" +
-            //"2. string\n" +
+            "2. random\n" +
             //"3. string\n" +
             //"4. string\n" +
             //"5. string\n" +
@@ -30,10 +30,10 @@ class Example
                 Console.Clear();
                 Chap1();
                 break;
-            //case "2":
-            //    Console.Clear();
-            //    Chap2();
-            //    break;
+            case "2":
+                Console.Clear();
+                Chap2();
+                break;
             //case "3":
             //    Console.Clear();
             //    Chap3();
@@ -71,13 +71,16 @@ class Example
 
     static void Chap1()
     {
-        _ListS<string> rty = new _ListS<string>(20);
+        //_ListS<string> rty = new _ListS<string>(20);
     }
 
-    //static void Chap2()
-    //{
-    //    Chapter2 chapter2 = new Chapter2();
-    //}
+    static void Chap2()
+    {
+        _Random rnd = new _Random();
+        for (int i = 0; i < 50; i++)
+            Console.WriteLine(rnd.NextRnd(2, 200));
+
+    }
 
     //static void Chap3()
     //{
