@@ -18,8 +18,8 @@ class DriverGame
     BoardPiece[,] boardBase = new BoardPiece[20, 40];
     BoardPiece[,] boardTmp = new BoardPiece[20, 40];
     ConsoleKeyInfo keys;
-    //int directX = 0;
-    //int directY = 0;
+    int directX = 0;
+    int directY = 0;
     public Random rnd = new Random();
 
     public DriverGame()
@@ -37,8 +37,8 @@ class DriverGame
         {
             for (int b = 0; b < boardBase.GetLength(1); b++)
             {
-                boardBase[a, b] = new BoardPiece(ConsoleColor.Yellow, '0');
-                boardTmp[a, b] = new BoardPiece(ConsoleColor.Yellow, ' ');
+                boardBase[a, b] = new BoardPiece(ConsoleColor.DarkGreen, '0');
+                boardTmp[a, b] = new BoardPiece(ConsoleColor.DarkGreen, ' ');
             }
         }
     }
@@ -49,59 +49,54 @@ class DriverGame
         {
             UpDate();
             Draw();
-            //if (Console.KeyAvailable == true)
-            //{
-            //    keys = Console.ReadKey();
-            //    InputKey();
-            //}
+            if (Console.KeyAvailable == true)
+            {
+                keys = Console.ReadKey();
+                InputKey();
+            }
             Thread.Sleep(250); // задержка
             CopyTmp();
         } while (keys.Key != ConsoleKey.Escape);
     }
 
-    //void InputKey()
-    //{
-    //    if (keys.Key == ConsoleKey.UpArrow)
-    //    {
-    //        directY = -1;
-    //        directX = 0;
-    //    }
-    //    if (keys.Key == ConsoleKey.DownArrow)
-    //    {
-    //        directY = 1;
-    //        directX = 0;
-    //    }
-    //    if (keys.Key == ConsoleKey.LeftArrow)
-    //    {
-    //        directY = 0;
-    //        directX = -1;
-    //    }
-    //    if (keys.Key == ConsoleKey.RightArrow)
-    //    {
-    //        directY = 0;
-    //        directX = 1;
-    //    }
-    //}
+    void InputKey()
+    {
+        if (keys.Key == ConsoleKey.UpArrow)
+        {
+            directY = -1;
+            directX = 0;
+        }
+        if (keys.Key == ConsoleKey.DownArrow)
+        {
+            directY = 1;
+            directX = 0;
+        }
+        if (keys.Key == ConsoleKey.LeftArrow)
+        {
+            directY = 0;
+            directX = -1;
+        }
+        if (keys.Key == ConsoleKey.RightArrow)
+        {
+            directY = 0;
+            directX = 1;
+        }
+    }
 
     void UpDate()
     {
-        for (int i = 0; i < 7; i++)
-        {
-            int y = rnd.Next(0, 20);
-            int x = rnd.Next(0, 40);
-            boardTmp[y, x].ch = '8';
-            boardBase[y, x].color = ConsoleColor.Blue;
-        }
-        //UpdateSnakeBody();
-        //board[snake.coordY, snake.coordX].ch = snake.body;
-        //board[snake.coordY, snake.coordX].color = snake.color;
+        UpdateSnakeBody();
+        boardBase[snake.coordY, snake.coordX].ch = snake.body;
+        boardBase[snake.coordY, snake.coordX].color = snake.color;
     }
 
-    //void UpdateSnakeBody()
-    //{
-    //    snake.coordX += directX;
-    //    snake.coordY += directY;
-    //}
+    void UpdateSnakeBody()
+    {
+        boardBase[snake.coordY, snake.coordX].ch = boardBase[0, 0].ch;
+        boardBase[snake.coordY, snake.coordX].color = boardBase[0, 0].color;
+        snake.coordX += directX;
+        snake.coordY += directY;
+    }
 
     void Draw()
     {
@@ -109,7 +104,7 @@ class DriverGame
         {
             for (int b = 0; b < boardBase.GetLength(1); b++)
             {
-                if (boardBase[a, b].ch == boardTmp[a, b].ch)
+                if (boardBase[a, b].ch != boardTmp[a, b].ch)
                 {
                     Console.ForegroundColor = boardBase[a, b].color;
                     Console.CursorLeft = b;
@@ -126,7 +121,8 @@ class DriverGame
         {
             for (int b = 0; b < boardBase.GetLength(1); b++)
             {
-                boardTmp[a, b] = boardBase[a, b];
+                boardTmp[a, b].ch = boardBase[a, b].ch;
+                boardTmp[a, b].color = boardBase[a, b].color;
             }
         }
     }
