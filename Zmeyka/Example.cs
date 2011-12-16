@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*
+using System;
 
 class Example
 {
@@ -91,3 +92,4 @@ class Example
         draw = false;
     }
 }
+*/
