@@ -71,7 +71,7 @@ class DriverGame
         {
             for (int b = 0; b < square.GetLength(1); b++)
             {
-                square[a, b].ch = ' ';
+                square[a, b].ch = 'X';
             }
         }
 
