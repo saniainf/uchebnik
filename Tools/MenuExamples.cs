@@ -71,7 +71,7 @@ class Example
 
     static void Chap1()
     {
-        //_ListS<string> rty = new _ListS<string>(20);
+       
     }
 
     static void Chap2()

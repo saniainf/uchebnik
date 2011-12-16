@@ -1,26 +1,27 @@
 ﻿using System;
 using System.Threading;
-
+using System.Collections.Generic;
 
 class Example
 {
     public static void Main()
     {
         ConsoleKeyInfo cki = new ConsoleKeyInfo();
+        List<string> asdasd = new List<string>();
 
         do
         {
-            do
-            {
                 Console.WriteLine("\nPress a key to display; press the 'x' key to quit.");
 
                 // Your code could perform some useful task in the following loop. However, 
                 // for the sake of this example we'll merely pause for a quarter second.
                 Thread.Sleep(250); // Loop until input is entered.
-            } while (Console.KeyAvailable == false);
-                
-            cki = Console.ReadKey(true);
-            Console.WriteLine("You pressed the '{0}' key.", cki.Key);
+                if (Console.KeyAvailable == true)
+                {
+                    cki = Console.ReadKey(true);
+                    Console.WriteLine("You pressed the '{0}' key.", cki.Key);
+                }
+
         } while (cki.Key != ConsoleKey.X);
 
         //for (int i = 0; i < 20; i++)
