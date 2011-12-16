@@ -71,7 +71,12 @@ class Example
 
     static void Chap1()
     {
-       
+        _ListS<string> asd = new _ListS<string>(50);
+        for (int i = 0; i < 50; i++)
+            asd[i] = "S";
+
+        for (int i = 0; i < 50; i++)
+            Console.Write(asd[i]);
     }
 
     static void Chap2()
