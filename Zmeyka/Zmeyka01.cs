@@ -14,16 +14,33 @@ class SnakeGame
 
 class DriverGame
 {
-    private List<Snake> snake = new List<Snake>();
-    Board[,] board = new Board[20, 40];
+    Snake snake;
+    BoardPiece[,] boardBase = new BoardPiece[20, 40];
+    BoardPiece[,] boardTmp = new BoardPiece[20, 40];
     ConsoleKeyInfo keys;
-    int directX = 0;
-    int directY = 0;
+    //int directX = 0;
+    //int directY = 0;
+    public Random rnd = new Random();
 
     public DriverGame()
     {
         Initial();
         Run();
+    }
+
+    void Initial()
+    {
+
+        snake = new Snake(5, 5, ConsoleColor.Green, "8");
+
+        for (int a = 0; a < boardBase.GetLength(0); a++)
+        {
+            for (int b = 0; b < boardBase.GetLength(1); b++)
+            {
+                boardBase[a, b] = new BoardPiece(ConsoleColor.Yellow, '0');
+                boardTmp[a, b] = new BoardPiece(ConsoleColor.Yellow, ' ');
+            }
+        }
     }
 
     void Run()
@@ -32,88 +49,84 @@ class DriverGame
         {
             UpDate();
             Draw();
-            if (Console.KeyAvailable == true)
-            {
-                keys = Console.ReadKey(true);
-                InputKey();
-            }
+            //if (Console.KeyAvailable == true)
+            //{
+            //    keys = Console.ReadKey();
+            //    InputKey();
+            //}
             Thread.Sleep(250); // задержка
+            CopyTmp();
         } while (keys.Key != ConsoleKey.Escape);
     }
 
-    void InputKey()
-    {
-        if (keys.Key == ConsoleKey.UpArrow)
-        {
-            directY = -1;
-            directX = 0;
-        }
-        if (keys.Key == ConsoleKey.DownArrow)
-        {
-            directY = 1;
-            directX = 0;
-        }
-        if (keys.Key == ConsoleKey.LeftArrow)
-        {
-            directY = 0;
-            directX = -1;
-        }
-        if (keys.Key == ConsoleKey.RightArrow)
-        {
-            directY = 0;
-            directX = 1;
-        }
-    }
+    //void InputKey()
+    //{
+    //    if (keys.Key == ConsoleKey.UpArrow)
+    //    {
+    //        directY = -1;
+    //        directX = 0;
+    //    }
+    //    if (keys.Key == ConsoleKey.DownArrow)
+    //    {
+    //        directY = 1;
+    //        directX = 0;
+    //    }
+    //    if (keys.Key == ConsoleKey.LeftArrow)
+    //    {
+    //        directY = 0;
+    //        directX = -1;
+    //    }
+    //    if (keys.Key == ConsoleKey.RightArrow)
+    //    {
+    //        directY = 0;
+    //        directX = 1;
+    //    }
+    //}
 
     void UpDate()
     {
-        for (int a = snake.Count - 1; a >= 0; a--)
+        for (int i = 0; i < 7; i++)
         {
-            board[snake[a].coordY, snake[a].coordX].ch = snake[a].body;
-            board[snake[a].coordY, snake[a].coordX].color = snake[a].color;
+            int y = rnd.Next(0, 20);
+            int x = rnd.Next(0, 40);
+            boardTmp[y, x].ch = '8';
+            boardBase[y, x].color = ConsoleColor.Blue;
         }
-
-        UpdateSnakeBody();
+        //UpdateSnakeBody();
+        //board[snake.coordY, snake.coordX].ch = snake.body;
+        //board[snake.coordY, snake.coordX].color = snake.color;
     }
 
-    void UpdateSnakeBody()
-    {
-        for (int a = snake.Count - 1; a > 0; a--)
-        {
-            snake[a].coordX = snake[a - 1].coordX;
-            snake[a].coordY = snake[a - 1].coordY;
-        }
-        snake[0].coordX += directX;
-        snake[0].coordY += directY;
-    }
+    //void UpdateSnakeBody()
+    //{
+    //    snake.coordX += directX;
+    //    snake.coordY += directY;
+    //}
 
     void Draw()
     {
-        Console.Clear();
-        for (int a = 0; a < board.GetLength(0); a++)
+        for (int a = 0; a < boardBase.GetLength(0); a++)
         {
-            for (int b = 0; b < board.GetLength(1); b++)
+            for (int b = 0; b < boardBase.GetLength(1); b++)
             {
-                Console.ForegroundColor = board[a, b].color;
-                Console.Write(board[a, b].ch);
+                if (boardBase[a, b].ch == boardTmp[a, b].ch)
+                {
+                    Console.ForegroundColor = boardBase[a, b].color;
+                    Console.CursorLeft = b;
+                    Console.CursorTop = a;
+                    Console.Write(boardBase[a, b].ch);
+                }
             }
-            Console.WriteLine();
         }
     }
 
-    void Initial()
+    void CopyTmp()
     {
-        for (int a = 0; a < 10; a++)
+        for (int a = 0; a < boardBase.GetLength(0); a++)
         {
-            snake.Add(new Snake(5, 5, ConsoleColor.Green, a.ToString()));
-        }
-        snake[0].color = ConsoleColor.Yellow;
-
-        for (int a = 0; a < board.GetLength(0); a++)
-        {
-            for (int b = 0; b < board.GetLength(1); b++)
+            for (int b = 0; b < boardBase.GetLength(1); b++)
             {
-                board[a, b] = new Board(ConsoleColor.Black, ' ');
+                boardTmp[a, b] = boardBase[a, b];
             }
         }
     }
@@ -135,12 +148,12 @@ class Snake
     }
 }
 
-class Board
+class BoardPiece
 {
     public ConsoleColor color;
     public char ch;
 
-    public Board(ConsoleColor color, char ch)
+    public BoardPiece(ConsoleColor color, char ch)
     {
         this.color = color;
         this.ch = ch;
