@@ -87,3 +87,38 @@ class Chapter5
         Console.WriteLine();
     }
 }
+
+class FactoryClass
+{
+    int alpha, beta;
+
+    public FactoryClass Factory(int a, int b) //метод который возвращает объект этого класса
+    {
+        FactoryClass obj = new FactoryClass();
+
+        obj.alpha = a;
+        obj.beta = b;
+
+        return obj;
+    }
+
+    public void Show()
+    {
+        Console.WriteLine("a: {0} , b: {1}", alpha, beta);
+    }
+
+    public int[] FindFactors(int num, out int numfactors) //метод возвращает массив (множители num)
+    {
+        int[] facts = new int[80];
+        int a, b;
+
+        for (a = 2, b = 0; a < num / 2 + 1; a++)
+            if ((num % a) == 0)
+            {
+                facts[b] = a;
+                b++;
+            }
+        numfactors = b;
+        return facts;
+    }
+}
