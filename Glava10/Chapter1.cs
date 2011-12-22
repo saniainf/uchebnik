@@ -13,6 +13,20 @@ class Chapter1
             if (fs.Error)
                 Console.WriteLine("Error with index " + i);
         }
+
+        Console.WriteLine("\nTest Struct");
+
+        TstIndex strct = new TstIndex(10);
+
+        for (int i = 0; i < 10; i++)
+        {
+            strct[i] = i;
+        }
+
+        for (int i = 0; i < 10; i++)
+        {
+            Console.WriteLine(strct[i]);
+        }
     }
 }
 
@@ -68,5 +82,34 @@ class FailSoftArray
     {
         if (index >= 0 & index < Length) return true;
         return false;
-    } 
+    }
+}
+
+
+struct TstIndex
+{
+    int[] a;
+
+    public TstIndex(int count)
+    {
+        a = new int[count];
+    }
+
+    public int this[int index]
+    {
+        get
+        {
+            return a[index];
+        }
+
+        set
+        {
+            a[index] = value;
+        }
+    }
+}
+
+struct chastica
+{
+    bool activ;
 }
