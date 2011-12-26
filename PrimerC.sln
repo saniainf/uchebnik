@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual C# Express 2010
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glava4", "Glava4\Glava4.csproj", "{01225540-D47A-4247-BC8A-636FD76216C6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shifrator", "shifrator\shifrator.csproj", "{9D43B49C-4E5F-4F84-A9C7-1D58A46BA4E3}"
@@ -34,6 +34,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glava11", "Glava11\Glava11.csproj", "{D6F1D218-C95D-46F0-ADB8-778C23558183}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glava12", "Glava12\Glava12.csproj", "{4AF4E1D9-BD27-47BC-9C9B-FF19CC224DC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glava13", "Glava13\Glava13.csproj", "{D0643D85-3DC2-41E4-AC8E-E9FB75FBBA0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,6 +111,10 @@ Global
 		{4AF4E1D9-BD27-47BC-9C9B-FF19CC224DC0}.Debug|x86.Build.0 = Debug|x86
 		{4AF4E1D9-BD27-47BC-9C9B-FF19CC224DC0}.Release|x86.ActiveCfg = Release|x86
 		{4AF4E1D9-BD27-47BC-9C9B-FF19CC224DC0}.Release|x86.Build.0 = Release|x86
+		{D0643D85-3DC2-41E4-AC8E-E9FB75FBBA0D}.Debug|x86.ActiveCfg = Debug|x86
+		{D0643D85-3DC2-41E4-AC8E-E9FB75FBBA0D}.Debug|x86.Build.0 = Debug|x86
+		{D0643D85-3DC2-41E4-AC8E-E9FB75FBBA0D}.Release|x86.ActiveCfg = Release|x86
+		{D0643D85-3DC2-41E4-AC8E-E9FB75FBBA0D}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
