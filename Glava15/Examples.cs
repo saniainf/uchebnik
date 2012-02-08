@@ -6,7 +6,7 @@ class Example
     {
         string numb;
         Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.Write("1. перехват исключений двух и всех\n" +
+        Console.Write("1. делегат\n" +
             //"2. finally\n" +
             //"3. string\n" +
             //"4. string\n" +
