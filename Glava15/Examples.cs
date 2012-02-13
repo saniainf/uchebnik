@@ -7,9 +7,9 @@ class Example
         string numb;
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.Write("1. делегат\n" +
-            //"2. finally\n" +
-            //"3. string\n" +
-            //"4. string\n" +
+            "2. делегаты, груповая адресация\n" +
+            "3. anonimus methods\n" +
+            "4. lambda\n" +
             //"5. string\n" +
             //"6. string\n" +
             //"7. string\n" +
@@ -29,18 +29,18 @@ class Example
                 Console.Clear();
                 Chap1();
                 break;
-            //case "2":
-            //    Console.Clear();
-            //    Chap2();
-            //    break;
-            //case "3":
-            //    Console.Clear();
-            //    Chap3();
-            //    break;
-            //case "4":
-            //    Console.Clear();
-            //    Chap4();
-            //    break;
+            case "2":
+                Console.Clear();
+                Chap2();
+                break;
+            case "3":
+                Console.Clear();
+                Chap3();
+                break;
+            case "4":
+                Console.Clear();
+                Chap4();
+                break;
             //case "5":
             //    Console.Clear();
             //    Chap5();
@@ -73,20 +73,20 @@ class Example
         Chapter1 chapter1 = new Chapter1();
     }
 
-    //static void Chap2()
-    //{
-    //    Chapter2 chapter2 = new Chapter2();
-    //}
+    static void Chap2()
+    {
+        Chapter2 chapter2 = new Chapter2();
+    }
 
-    //static void Chap3()
-    //{
-    //    Chapter3 chapter3 = new Chapter3();
-    //}
+    static void Chap3()
+    {
+        Chapter3 chapter3 = new Chapter3();
+    }
 
-    //static void Chap4()
-    //{
-    //    Chapter4 chapter4 = new Chapter4();
-    //}
+    static void Chap4()
+    {
+        Chapter4 chapter4 = new Chapter4();
+    }
 
     //static void Chap5()
     //{
