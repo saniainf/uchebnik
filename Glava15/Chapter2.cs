@@ -12,18 +12,18 @@ class Chapter2
     {
         DelegateTestRef delegateObj = new DelegateTestRef();
         StrMod2 strOp;
-        StrMod2 replaceSp = delegateObj.ReplaceSpaces;
+        //StrMod2 replaceSp = delegateObj.ReplaceSpaces;
         StrMod2 removeSp = delegateObj.RemoveSpace;
-        StrMod2 reverseStr = delegateObj.Reverse;
+        //StrMod2 reverseStr = delegateObj.Reverse;
         string str = "Simple string line";
 
-        strOp = replaceSp;
-        strOp += reverseStr;
+        strOp = delegateObj.ReplaceSpaces;
+        strOp += delegateObj.Reverse;
 
         strOp(ref str);
         Console.WriteLine("str: " + str + "\n");
 
-        strOp -= replaceSp;
+        strOp -= delegateObj.ReplaceSpaces;
         strOp += removeSp;
         str = "Simple string line";
 

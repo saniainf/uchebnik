@@ -10,10 +10,10 @@ class Chapter1
 {
     public Chapter1()
     {
-        DelegateTest delegObj = new DelegateTest();
+        var delegObj = new DelegateTest();
         string str;
 
-        StrMod strOp = delegObj.ReplaceSpaces;
+        var strOp = new StrMod(delegObj.ReplaceSpaces);
         str = strOp("Test string line");
         Console.WriteLine("str: " + str + "\n");
 

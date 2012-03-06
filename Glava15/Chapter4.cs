@@ -14,7 +14,7 @@ class Chapter4
     {
         Incr incr = (int count) => count + 2;
         IsEven isEven = n => n % 2 == 0;
-        InRange inRange = (low, high, val) => (val >= low && val <= high);
+        InRange inRange = (int low, int high, int val) => (val >= low && val <= high);
         IntOp fact = n =>
         {
             int r = 1;
