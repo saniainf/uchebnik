@@ -11,9 +11,9 @@ class Example
             "3. anonimus methods\n" +
             "4. lambda\n" +
             "5. event\n" +
-            //"6. string\n" +
-            //"7. string\n" +
-            //"8. string\n" +
+            "6. event access\n" +
+            "7. event .NET\n" +
+            "8. EventHandler<TEventArgs>\n" +
                         "0. Выход\n" +
                         "\n");
         Console.ForegroundColor = ConsoleColor.Green;
@@ -45,18 +45,18 @@ class Example
                 Console.Clear();
                 Chap5();
                 break;
-            //case "6":
-            //    Console.Clear();
-            //    Chap6();
-            //    break;
-            //case "7":
-            //    Console.Clear();
-            //    Chap7();
-            //    break;
-            //case "8":
-            //    Console.Clear();
-            //    Chap8();
-            //    break;
+            case "6":
+                Console.Clear();
+                Chap6();
+                break;
+            case "7":
+                Console.Clear();
+                Chap7();
+                break;
+            case "8":
+                Console.Clear();
+                Chap8();
+                break;
             case "0":
                 Console.Clear();
                 return 0;
@@ -93,18 +93,18 @@ class Example
         Chapter5 chapter5 = new Chapter5();
     }
 
-    //static void Chap6()
-    //{
-    //    Chapter6 chapter6 = new Chapter6();
-    //}
+    static void Chap6()
+    {
+        Chapter6 chapter6 = new Chapter6();
+    }
 
-    //static void Chap7()
-    //{
-    //    Chapter7 chapter7 = new Chapter7();
-    //}
+    static void Chap7()
+    {
+        Chapter7 chapter7 = new Chapter7();
+    }
 
-    //static void Chap8()
-    //{
-    //    Chapter8 chapter8 = new Chapter8();
-    //}
+    static void Chap8()
+    {
+        Chapter8 chapter8 = new Chapter8();
+    }
 }

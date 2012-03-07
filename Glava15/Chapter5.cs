@@ -7,22 +7,20 @@ delegate void MyEventHandler();
 
 class Chapter5
 {
-    public void Handler()
-    {
-        Console.WriteLine("Event is done");
-    }
-
     public Chapter5()
     {
-        MyEvent evt = new MyEvent();
+        MyEventChap6 evt = new MyEventChap6();
+        Subscribers1 sub1 = new Subscribers1();
+        Subscribers2 sub2 = new Subscribers2();
 
-        evt.SomeEvent += Handler;
+        evt.SomeEvent += sub1.Handler1;
+        evt.SomeEvent += sub2.Handler2;
 
         evt.OnSomeEvent();
     }
 }
 
-class MyEvent
+class MyEvent2
 {
     public event MyEventHandler SomeEvent;
 
@@ -30,6 +28,22 @@ class MyEvent
     {
         if (SomeEvent != null)
             SomeEvent();
+    }
+}
+
+class Subscribers1
+{
+    public void Handler1()
+    {
+        Console.WriteLine("Event handle sub1");
+    }
+}
+
+class Subscribers2
+{
+    public void Handler2()
+    {
+        Console.WriteLine("Event handle sub2");
     }
 }
 
