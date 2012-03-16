@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glava13", "Glava13\Glava13.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glava15", "Glava15\Glava15.csproj", "{41583BF9-BF4E-4382-ABC1-5F0A10AE2521}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glava16", "Glava16\Glava16.csproj", "{E6F85693-3C25-4EFF-A6D4-C0744460C922}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -121,6 +123,10 @@ Global
 		{41583BF9-BF4E-4382-ABC1-5F0A10AE2521}.Debug|x86.Build.0 = Debug|x86
 		{41583BF9-BF4E-4382-ABC1-5F0A10AE2521}.Release|x86.ActiveCfg = Release|x86
 		{41583BF9-BF4E-4382-ABC1-5F0A10AE2521}.Release|x86.Build.0 = Release|x86
+		{E6F85693-3C25-4EFF-A6D4-C0744460C922}.Debug|x86.ActiveCfg = Debug|x86
+		{E6F85693-3C25-4EFF-A6D4-C0744460C922}.Debug|x86.Build.0 = Debug|x86
+		{E6F85693-3C25-4EFF-A6D4-C0744460C922}.Release|x86.ActiveCfg = Release|x86
+		{E6F85693-3C25-4EFF-A6D4-C0744460C922}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

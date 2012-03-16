@@ -14,6 +14,7 @@ class Example
             "6. event access\n" +
             "7. event .NET\n" +
             "8. EventHandler<TEventArgs>\n" +
+            "9. event win\n" +
                         "0. Выход\n" +
                         "\n");
         Console.ForegroundColor = ConsoleColor.Green;
@@ -56,6 +57,10 @@ class Example
             case "8":
                 Console.Clear();
                 Chap8();
+                break;
+            case "9":
+                Console.Clear();
+                Chap9();
                 break;
             case "0":
                 Console.Clear();
@@ -106,5 +111,10 @@ class Example
     static void Chap8()
     {
         Chapter8 chapter8 = new Chapter8();
+    }
+
+    static void Chap9()
+    {
+        Chapter9 chapter9 = new Chapter9();
     }
 }
