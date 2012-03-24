@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools", "Tools\Tools.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zmeyka", "Zmeyka\Zmeyka.csproj", "{BE46B88B-FAEF-4CBE-BF5E-0D968BF5FAD2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glava14", "Glava14\Glava14.csproj", "{DF92CC9B-A488-48A7-9595-301525C613A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -127,6 +129,10 @@ Global
 		{BE46B88B-FAEF-4CBE-BF5E-0D968BF5FAD2}.Debug|x86.Build.0 = Debug|x86
 		{BE46B88B-FAEF-4CBE-BF5E-0D968BF5FAD2}.Release|x86.ActiveCfg = Release|x86
 		{BE46B88B-FAEF-4CBE-BF5E-0D968BF5FAD2}.Release|x86.Build.0 = Release|x86
+		{DF92CC9B-A488-48A7-9595-301525C613A2}.Debug|x86.ActiveCfg = Debug|x86
+		{DF92CC9B-A488-48A7-9595-301525C613A2}.Debug|x86.Build.0 = Debug|x86
+		{DF92CC9B-A488-48A7-9595-301525C613A2}.Release|x86.ActiveCfg = Release|x86
+		{DF92CC9B-A488-48A7-9595-301525C613A2}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
