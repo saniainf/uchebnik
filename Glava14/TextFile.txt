@@ -1,0 +1,27 @@
+﻿User defined symbols path: C:\Program Files\Diablo III Beta
+2012.01.07 19:00:07.310121500	Diablo III Release (No Assertions) running under Windows 7 SP1 (Version 6.1.7601)
+2012.01.07 19:00:07.310423700	<BUILD>0.5.1.8101.BETA (35452-625603)</BUILD>
+2012.01.07 19:00:07.310717400	Cheats: DISABLED
+2012.01.07 19:00:07.311021900	Vendor:  Intel
+2012.01.07 19:00:07.311314500	Version: Intel(R) Core(TM)2 Duo CPU     E6750  @ 2.66GHz (Type 0, Family 6, Model F, Stepping B)
+2012.01.07 19:00:07.311628600	2046.49 MB of total physical memory
+2012.01.07 19:00:07.311931600	OS Language: Russian
+2012.01.07 19:00:07.312215800	Application Path: C:\Program Files\Diablo III Beta\
+2012.01.07 19:00:07.315830300	--- OS memory stats -----
+2012.01.07 19:00:07.316139800	Virtual size: 175.71 Mb
+2012.01.07 19:00:07.316414000	Total free: 1872.16 Mb
+2012.01.07 19:00:07.316687000	Largest free block: 934.87 Mb
+2012.01.07 19:00:07.316957000	--- OS memory stats end-----
+2012.01.07 19:00:07.317231500	----------------------------------------------
+
+2012.01.07 19:00:07.317513800	Command Line: -launch -auroraaddress localhost:1345
+2012.01.07 19:00:07.317864300	Monitor BPP: 32
+2012.01.07 19:00:07.318143500	Lowest monitor BPP: 32
+2012.01.07 19:00:10.510499000	ERROR: Failed to pause Agent.
+2012.01.07 19:00:10.527856400	SNOFilesInitialize('Data_D3', enUS)
+2012.01.07 19:00:10.533679600	Initializing Streaming
+2012.01.07 19:00:10.804377900	--- OS memory stats -----
+2012.01.07 19:00:10.804730000	Virtual size: 212.25 Mb
+2012.01.07 19:00:10.805007600	Total free: 1835.57 Mb
+2012.01.07 19:00:10.805282500	Largest free block: 934.87 Mb
+2012.01.07 19:00:10.805554400	--- OS memory stats end-----
