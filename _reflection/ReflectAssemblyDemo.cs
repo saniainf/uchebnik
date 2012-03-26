@@ -1,16 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Reflection;
 
-
-class Chapter2
+class reflectionAssemblyDemo
 {
-    public Chapter2()
+    static void Main()
     {
         int val;
-        Type t = typeof(MyClass); // извлечь объект типа Type из MyClass
+
+        // загрузка сборки MyClasses.exe
+        Assembly asm = Assembly.LoadFrom("MyClasses.exe");
+
+        // извлечь все типы
+        Type[] alltypes = asm.GetTypes();
+        foreach (Type temp in alltypes)
+            Console.WriteLine("Найдено: " + temp.Name);
+
+        Console.WriteLine();
+
+        Type t = alltypes[0]; // использовать первый найденный класс
+        Console.WriteLine("Использован класс: " + t.Name);
+
         MethodInfo[] mi = t.GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly); // занести в массив все методы объекта
         ConstructorInfo[] ci = t.GetConstructors(); // занести в массив конструкторы объекта
 
@@ -65,7 +74,7 @@ class Chapter2
             ParameterInfo[] pi = ci[x].GetParameters();
             if (pi.Length == 2) break;
         }
-        
+
         if (x == ci.Length)
         {
             Console.WriteLine("Нет нужного конструктора");
@@ -127,60 +136,5 @@ class Chapter2
         }
 
         #endregion
-    }
-}
-
-class MyClass
-{
-    int x;
-    int y;
-
-    public MyClass(int i)
-    {
-        Console.WriteLine("Construct class MyClass(int). ");
-        x = y = i;
-        Console.WriteLine();
-    }
-
-    public MyClass(int i, int j)
-    {
-        Console.WriteLine("Construct class MyClass(int, int). ");
-        x = i;
-        y = j;
-        Show();
-        Console.WriteLine();
-    }
-
-    public int Sum()
-    {
-        return x + y;
-    }
-
-    public bool IsBetween(int i)
-    {
-        if ((x < i) && (i < y)) return true;
-        else return false;
-    }
-
-    public void Set(int a, int b)
-    {
-        Console.Write("   " + "в методе Set(int, int). ");
-        x = a;
-        y = b;
-        Show();
-    }
-
-    // перегрузка метода 
-    public void Set(double a, double b)
-    {
-        Console.Write("   " + "в методе Set(double, double). ");
-        x = (int)a;
-        y = (int)b;
-        Show();
-    }
-
-    public void Show()
-    {
-        Console.WriteLine("Значение x: {0}, y: {1}", x, y);
     }
 }
