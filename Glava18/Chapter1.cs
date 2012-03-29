@@ -15,7 +15,6 @@ class Chapter1
         Console.WriteLine("Значение: " + strValue + "\n");
 
         // два параметра типа
-
         TwoGen<string, int> striOb = new TwoGen<string, int>("test text", 847);
         striOb.ShowTypeOdj();
         Console.WriteLine("tValue1: {0}", striOb.GetTvalue1());
