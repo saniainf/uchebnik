@@ -1,4 +1,5 @@
 ﻿using System;
+using chapter2;
 
 class Example
 {
@@ -7,7 +8,7 @@ class Example
         string numb;
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.Write("1. Обобщения / generic\n" +
-            //"2. reflection\n" +
+            "2. ограничение на класс\n" +
             "3. ограничение на интерфейс\n" +
             "4. ограничение на констуктор new()\n" +
             //"5. event\n" +
@@ -30,10 +31,10 @@ class Example
                 Console.Clear();
                 Chap1();
                 break;
-            //case "2":
-            //    Console.Clear();
-            //    Chap2();
-            //    break;
+            case "2":
+                Console.Clear();
+                Chap2();
+                break;
             case "3":
                 Console.Clear();
                 Chap3();
@@ -78,10 +79,10 @@ class Example
         Chapter1 chapter1 = new Chapter1();
     }
 
-    //static void Chap2()
-    //{
-    //    Chapter2 chapter2 = new Chapter2();
-    //}
+    static void Chap2()
+    {
+        Chapter2 chapter2 = new Chapter2();
+    }
 
     static void Chap3()
     {
