@@ -22,7 +22,7 @@ class Chapter1
     }
 }
 
-class Gen<Tkey>
+class Gen<Tkey> 
 {
     Tkey tValue; // string | int typeObj
 
