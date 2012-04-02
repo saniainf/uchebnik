@@ -8,8 +8,8 @@ class Example
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.Write("1. Обобщения / generic\n" +
             //"2. reflection\n" +
-            //"3. anonimus methods\n" +
-            //"4. lambda\n" +
+            "3. ограничение на интерфейс\n" +
+            "4. ограничение на констуктор new()\n" +
             //"5. event\n" +
             //"6. event access\n" +
             //"7. event .NET\n" +
@@ -34,14 +34,14 @@ class Example
             //    Console.Clear();
             //    Chap2();
             //    break;
-            //case "3":
-            //    Console.Clear();
-            //    Chap3();
-            //    break;
-            //case "4":
-            //    Console.Clear();
-            //    Chap4();
-            //    break;
+            case "3":
+                Console.Clear();
+                Chap3();
+                break;
+            case "4":
+                Console.Clear();
+                Chap4();
+                break;
             //case "5":
             //    Console.Clear();
             //    Chap5();
@@ -83,15 +83,15 @@ class Example
     //    Chapter2 chapter2 = new Chapter2();
     //}
 
-    //static void Chap3()
-    //{
-    //    Chapter3 chapter3 = new Chapter3();
-    //}
+    static void Chap3()
+    {
+        Chapter3 chapter3 = new Chapter3();
+    }
 
-    //static void Chap4()
-    //{
-    //    Chapter4 chapter4 = new Chapter4();
-    //}
+    static void Chap4()
+    {
+        Chapter4 chapter4 = new Chapter4();
+    }
 
     //static void Chap5()
     //{
