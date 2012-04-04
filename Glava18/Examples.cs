@@ -11,7 +11,7 @@ class Example
             "2. ограничение на класс\n" +
             "3. ограничение на интерфейс\n" +
             "4. ограничение на констуктор new()\n" +
-            //"5. event\n" +
+            "5. обобщенный метод\n" +
             //"6. event access\n" +
             //"7. event .NET\n" +
             //"8. EventHandler<TEventArgs>\n" +
@@ -43,10 +43,10 @@ class Example
                 Console.Clear();
                 Chap4();
                 break;
-            //case "5":
-            //    Console.Clear();
-            //    Chap5();
-            //    break;
+            case "5":
+                Console.Clear();
+                Chap5();
+                break;
             //case "6":
             //    Console.Clear();
             //    Chap6();
@@ -94,10 +94,10 @@ class Example
         Chapter4 chapter4 = new Chapter4();
     }
 
-    //static void Chap5()
-    //{
-    //    Chapter5 chapter5 = new Chapter5();
-    //}
+    static void Chap5()
+    {
+        Chapter5 chapter5 = new Chapter5();
+    }
 
     //static void Chap6()
     //{
