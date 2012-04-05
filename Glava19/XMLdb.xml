@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<bookstore>
+  <book>
+    <title>
+      Автобиография Бенджамина Франклина
+    </title>
+    <author>
+      <first-name>
+        Бенджамин
+      </first-name>
+      <last-name>
+        Франклин
+      </last-name>
+    </author>
+    <price>
+      8.99
+    </price>
+  </book>
+  <book>
+    <title>
+      Мошенник
+    </title>
+    <author>
+      <first-name>
+        Герман
+      </first-name>
+      <last-name>
+        Мелвилл
+      </last-name>
+    </author>
+    <price>
+      11.99
+    </price>
+  </book>
+  <book>
+    <title>
+      Горгий
+    </title>
+    <author>
+      <name>
+        Платон
+      </name>
+    </author>
+    <price>
+      9.99
+    </price>
+  </book>
+</bookstore>
