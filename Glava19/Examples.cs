@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Glava19.Chap1;
 
+
 namespace Glava19
 {
     class Examples
@@ -13,10 +14,10 @@ namespace Glava19
             string numb;
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write("1. простой запрос\n" +
-                "2. сортировка в запросе\n" +
-                //"3. ограничение на интерфейс\n" +
-                //"4. ограничение на констуктор new()\n" +
-                //"5. обобщенный метод\n" +
+                "2. варианты Select и Group\n" +
+                "3. переменая в запросе let\n" +
+                "4. оператор join & анонимные типы LINQ\n" +
+                "5. груповое объединение\n" +
                 //"6. event access\n" +
                 //"7. event .NET\n" +
                 //"8. EventHandler<TEventArgs>\n" +
@@ -40,18 +41,18 @@ namespace Glava19
                     Console.Clear();
                     Chap2();
                     break;
-                //case "3":
-                //    Console.Clear();
-                //    Chap3();
-                //    break;
-                //case "4":
-                //    Console.Clear();
-                //    Chap4();
-                //    break;
-                //case "5":
-                //    Console.Clear();
-                //    Chap5();
-                //    break;
+                case "3":
+                    Console.Clear();
+                    Chap3();
+                    break;
+                case "4":
+                    Console.Clear();
+                    Chap4();
+                    break;
+                case "5":
+                    Console.Clear();
+                    Chap5();
+                    break;
                 //case "6":
                 //    Console.Clear();
                 //    Chap6();
@@ -89,20 +90,20 @@ namespace Glava19
             Chapter2 chapter2 = new Chapter2();
         }
 
-        //static void Chap3()
-        //{
-        //    Chapter3 chapter3 = new Chapter3();
-        //}
+        static void Chap3()
+        {
+            Chapter3 chapter3 = new Chapter3();
+        }
 
-        //static void Chap4()
-        //{
-        //    Chapter4 chapter4 = new Chapter4();
-        //}
+        static void Chap4()
+        {
+            Chapter4 chapter4 = new Chapter4();
+        }
 
-        //static void Chap5()
-        //{
-        //    Chapter5 chapter5 = new Chapter5();
-        //}
+        static void Chap5()
+        {
+            Chapter5 chapter5 = new Chapter5();
+        }
 
         //static void Chap6()
         //{
