@@ -27,11 +27,22 @@ namespace Glava19
                 new InStockStatus(6411, true) 
             };
 
+            /*
             var inStockList = from item in items // первый запрос
                               join entry in statusList // объеденить со вторым
                                 on item.ItemNumber equals entry.ItemNumber // по элементам
                               select new { item.Name, InStock = entry.InStock }; // вывести с созданием анонимного типа
                                 // в item.Name свойстве именем становится имя идентефикатора Name
+            */
+
+            // запрос методом
+            var inStockList = items.Join // первый запрос
+                (
+                statusList, // объеденить со вторым
+                k1 => k1.ItemNumber, // по элементам
+                k2 => k2.ItemNumber, // по элементам
+                (it1, it2) => new { it1.Name, it2.InStock } // вывести с созданием анонимного типа
+                );
 
             Console.WriteLine("Товар\tНаличие\n");
 

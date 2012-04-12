@@ -10,7 +10,7 @@ namespace Glava19
         public Chapter5()
         {
 
-            // массив классификации видов техники 
+            // массив классификации техники 
             string[] travelTypes =
             {
                 "Воздушный",

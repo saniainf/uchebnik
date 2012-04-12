@@ -18,7 +18,7 @@ namespace Glava19
                 "3. переменая в запросе let\n" +
                 "4. оператор join & анонимные типы LINQ\n" +
                 "5. груповое объединение\n" +
-                //"6. event access\n" +
+                "6. методы запроса\n" +
                 //"7. event .NET\n" +
                 //"8. EventHandler<TEventArgs>\n" +
                 //"9. event win\n" +
@@ -53,10 +53,10 @@ namespace Glava19
                     Console.Clear();
                     Chap5();
                     break;
-                //case "6":
-                //    Console.Clear();
-                //    Chap6();
-                //    break;
+                case "6":
+                    Console.Clear();
+                    Chap6();
+                    break;
                 //case "7":
                 //    Console.Clear();
                 //    Chap7();
@@ -105,10 +105,10 @@ namespace Glava19
             Chapter5 chapter5 = new Chapter5();
         }
 
-        //static void Chap6()
-        //{
-        //    Chapter6 chapter6 = new Chapter6();
-        //}
+        static void Chap6()
+        {
+            Chapter6 chapter6 = new Chapter6();
+        }
 
         //static void Chap7()
         //{
